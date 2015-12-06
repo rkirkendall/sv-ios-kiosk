@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E96FD5F41C13DD1400EED512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F31C13DD1400EED512 /* main.m */; };
 		E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F61C13DD1400EED512 /* AppDelegate.m */; };
-		E96FD5FA1C13DD1400EED512 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F91C13DD1400EED512 /* ViewController.m */; };
+		E96FD5FA1C13DD1400EED512 /* PickElectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F91C13DD1400EED512 /* PickElectionVC.m */; };
 		E96FD5FD1C13DD1400EED512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96FD5FB1C13DD1400EED512 /* Main.storyboard */; };
 		E96FD5FF1C13DD1400EED512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96FD5FE1C13DD1400EED512 /* Assets.xcassets */; };
 		E96FD6021C13DD1400EED512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96FD6001C13DD1400EED512 /* LaunchScreen.storyboard */; };
@@ -39,8 +39,8 @@
 		E96FD5F31C13DD1400EED512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E96FD5F51C13DD1400EED512 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E96FD5F61C13DD1400EED512 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E96FD5F81C13DD1400EED512 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E96FD5F91C13DD1400EED512 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E96FD5F81C13DD1400EED512 /* PickElectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickElectionVC.h; sourceTree = "<group>"; };
+		E96FD5F91C13DD1400EED512 /* PickElectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickElectionVC.m; sourceTree = "<group>"; };
 		E96FD5FC1C13DD1400EED512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E96FD5FE1C13DD1400EED512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E96FD6011C13DD1400EED512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			children = (
 				E96FD5F51C13DD1400EED512 /* AppDelegate.h */,
 				E96FD5F61C13DD1400EED512 /* AppDelegate.m */,
-				E96FD5F81C13DD1400EED512 /* ViewController.h */,
-				E96FD5F91C13DD1400EED512 /* ViewController.m */,
+				E96FD5F81C13DD1400EED512 /* PickElectionVC.h */,
+				E96FD5F91C13DD1400EED512 /* PickElectionVC.m */,
 				E96FD5FB1C13DD1400EED512 /* Main.storyboard */,
 				E96FD5FE1C13DD1400EED512 /* Assets.xcassets */,
 				E96FD6001C13DD1400EED512 /* LaunchScreen.storyboard */,
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96FD5FA1C13DD1400EED512 /* ViewController.m in Sources */,
+				E96FD5FA1C13DD1400EED512 /* PickElectionVC.m in Sources */,
 				E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */,
 				E96FD5F41C13DD1400EED512 /* main.m in Sources */,
 			);
@@ -415,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SureVoting.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -426,6 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SureVoting.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

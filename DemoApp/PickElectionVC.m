@@ -6,13 +6,13 @@
 //  Copyright © 2015 SureVoting. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PickElectionVC.h"
 
-@interface ViewController ()
+@interface PickElectionVC ()
 
 @end
 
-@implementation ViewController
+@implementation PickElectionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,4 +24,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)startVotingTapped:(id)sender {
+}
 @end
