@@ -10,7 +10,9 @@
 
 @interface APIKey : NSObject
 
-+ (NSString *)ParseKey;
+
++ (NSString *)ParseClientKey;
++ (NSString *)ParseAppId;
 + (NSString *)BlockCypherToken;
 
 @end

@@ -14,4 +14,9 @@
     return @"Election";
 }
 
++ (void)load {
+    NSLog(@"Election Load ran");
+    [self registerSubclass];
+}
+
 @end

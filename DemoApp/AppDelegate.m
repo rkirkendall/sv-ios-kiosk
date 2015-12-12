@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Parse/Parse.h>
+#import "APIKey.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:[APIKey ParseAppId]
+                  clientKey:[APIKey ParseClientKey]];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
     return YES;
 }
 
