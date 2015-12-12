@@ -10,12 +10,15 @@
 #import <Parse/PFObject+Subclass.h>
 @implementation Election
 
+@dynamic name;
+@dynamic startDate;
+@dynamic endDate;
+
 + (NSString *)parseClassName {
     return @"Election";
 }
 
 + (void)load {
-    NSLog(@"Election Load ran");
     [self registerSubclass];
 }
 

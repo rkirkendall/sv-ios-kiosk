@@ -7,7 +7,7 @@
 //
 
 #import "PickElectionVC.h"
-
+#import "ElectionManager.h"
 @interface PickElectionVC ()
 
 @end
@@ -25,5 +25,12 @@
 }
 
 - (IBAction)startVotingTapped:(id)sender {
+    [[ElectionManager Manager] joinElectionWithId:self.electionIdField.text withCompletion:^(BOOL valid) {
+        if (!valid) {
+            self.invalidElectionMessage.hidden = NO;
+        }else{
+            self.invalidElectionMessage.hidden = YES;
+        }
+    }];
 }
 @end

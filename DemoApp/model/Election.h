@@ -10,5 +10,8 @@
 #import <Parse/Parse.h>
 @interface Election : PFObject<PFSubclassing>
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
 
 @end

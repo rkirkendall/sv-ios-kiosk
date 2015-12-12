@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Election.h"
 @interface ElectionManager : NSObject
 
-//@property (nonatomic, strong) 
+@property (nonatomic, strong) Election *currentElection;
 
 + (id)Manager;
+
+- (void)joinElectionWithId:(NSString *)eid withCompletion:(void (^)(BOOL valid))completion;
 
 @end

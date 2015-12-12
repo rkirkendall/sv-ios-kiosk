@@ -24,4 +24,15 @@
     return self;
 }
 
+- (void)joinElectionWithId:(NSString *)eid withCompletion:(void (^)(BOOL valid))completion{
+    self.currentElection = [Election objectWithoutDataWithObjectId:eid];
+    [self.currentElection fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (error || !object) {
+            completion(NO);
+        }
+        NSLog(@"%@",self.currentElection.name);
+        completion(YES);
+    }];
+}
+
 @end
