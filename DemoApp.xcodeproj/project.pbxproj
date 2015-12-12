@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91325DC1C13FCE800F8FD4F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325DB1C13FCE800F8FD4F /* AudioToolbox.framework */; };
+		E91325DE1C13FCF000F8FD4F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325DD1C13FCF000F8FD4F /* CFNetwork.framework */; };
+		E91325E01C13FCF700F8FD4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325DF1C13FCF700F8FD4F /* CoreGraphics.framework */; };
+		E91325E21C13FCFF00F8FD4F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325E11C13FCFF00F8FD4F /* CoreLocation.framework */; };
+		E91325E41C13FD0600F8FD4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325E31C13FD0600F8FD4F /* QuartzCore.framework */; };
+		E91325E61C13FD0D00F8FD4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325E51C13FD0D00F8FD4F /* Security.framework */; };
+		E91325E81C13FD1500F8FD4F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325E71C13FD1500F8FD4F /* StoreKit.framework */; };
+		E91325EA1C13FD1E00F8FD4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325E91C13FD1E00F8FD4F /* SystemConfiguration.framework */; };
+		E91325EC1C13FD2C00F8FD4F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325EB1C13FD2C00F8FD4F /* libz.tbd */; };
+		E91325EE1C13FD3700F8FD4F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325ED1C13FD3700F8FD4F /* libsqlite3.tbd */; };
+		E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EA9F1C1CAC8000D899BF /* UserManager.m */; };
+		E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA21C1CACBC00D899BF /* ElectionManager.m */; };
+		E933EAA71C1CADE400D899BF /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA61C1CADE400D899BF /* APIKey.m */; };
 		E96FD5F41C13DD1400EED512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F31C13DD1400EED512 /* main.m */; };
 		E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F61C13DD1400EED512 /* AppDelegate.m */; };
 		E96FD5FA1C13DD1400EED512 /* PickElectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F91C13DD1400EED512 /* PickElectionVC.m */; };
@@ -15,6 +28,13 @@
 		E96FD6021C13DD1400EED512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96FD6001C13DD1400EED512 /* LaunchScreen.storyboard */; };
 		E96FD60D1C13DD1400EED512 /* DemoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD60C1C13DD1400EED512 /* DemoAppTests.m */; };
 		E96FD6181C13DD1400EED512 /* DemoAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD6171C13DD1400EED512 /* DemoAppUITests.m */; };
+		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
+		E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B421C13F005001B387C /* Parse.framework */; };
+		E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */; };
+		E9EC9B4A1C13F005001B387C /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B441C13F005001B387C /* ParseFacebookUtilsV4.framework */; };
+		E9EC9B4B1C13F005001B387C /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B451C13F005001B387C /* ParseTwitterUtils.framework */; };
+		E9EC9B4C1C13F005001B387C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B461C13F005001B387C /* ParseUI.framework */; };
+		E9EC9B591C13F801001B387C /* Election.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EC9B581C13F801001B387C /* Election.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +55,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E91325DB1C13FCE800F8FD4F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E91325DD1C13FCF000F8FD4F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E91325DF1C13FCF700F8FD4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E91325E11C13FCFF00F8FD4F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E91325E31C13FD0600F8FD4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E91325E51C13FD0D00F8FD4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E91325E71C13FD1500F8FD4F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E91325E91C13FD1E00F8FD4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E91325EB1C13FD2C00F8FD4F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E91325ED1C13FD3700F8FD4F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E933EA9E1C1CAC8000D899BF /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = model/UserManager.h; sourceTree = "<group>"; };
+		E933EA9F1C1CAC8000D899BF /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = model/UserManager.m; sourceTree = "<group>"; };
+		E933EAA11C1CACBC00D899BF /* ElectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElectionManager.h; path = model/ElectionManager.h; sourceTree = "<group>"; };
+		E933EAA21C1CACBC00D899BF /* ElectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElectionManager.m; path = model/ElectionManager.m; sourceTree = "<group>"; };
+		E933EAA51C1CADE400D899BF /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIKey.h; path = model/APIKey.h; sourceTree = "<group>"; };
+		E933EAA61C1CADE400D899BF /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIKey.m; path = model/APIKey.m; sourceTree = "<group>"; };
 		E96FD5EF1C13DD1400EED512 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96FD5F31C13DD1400EED512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E96FD5F51C13DD1400EED512 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +87,14 @@
 		E96FD6131C13DD1400EED512 /* DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96FD6171C13DD1400EED512 /* DemoAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppUITests.m; sourceTree = "<group>"; };
 		E96FD6191C13DD1400EED512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9EC9B411C13F005001B387C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E9EC9B421C13F005001B387C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		E9EC9B441C13F005001B387C /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		E9EC9B451C13F005001B387C /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
+		E9EC9B461C13F005001B387C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		E9EC9B571C13F801001B387C /* Election.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Election.h; path = model/Election.h; sourceTree = "<group>"; };
+		E9EC9B581C13F801001B387C /* Election.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Election.m; path = model/Election.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +102,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91325EE1C13FD3700F8FD4F /* libsqlite3.tbd in Frameworks */,
+				E91325EC1C13FD2C00F8FD4F /* libz.tbd in Frameworks */,
+				E91325EA1C13FD1E00F8FD4F /* SystemConfiguration.framework in Frameworks */,
+				E91325E81C13FD1500F8FD4F /* StoreKit.framework in Frameworks */,
+				E91325E61C13FD0D00F8FD4F /* Security.framework in Frameworks */,
+				E91325E41C13FD0600F8FD4F /* QuartzCore.framework in Frameworks */,
+				E91325E21C13FCFF00F8FD4F /* CoreLocation.framework in Frameworks */,
+				E91325E01C13FCF700F8FD4F /* CoreGraphics.framework in Frameworks */,
+				E91325DE1C13FCF000F8FD4F /* CFNetwork.framework in Frameworks */,
+				E91325DC1C13FCE800F8FD4F /* AudioToolbox.framework in Frameworks */,
+				E9EC9B4C1C13F005001B387C /* ParseUI.framework in Frameworks */,
+				E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */,
+				E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */,
+				E9EC9B4A1C13F005001B387C /* ParseFacebookUtilsV4.framework in Frameworks */,
+				E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */,
+				E9EC9B4B1C13F005001B387C /* ParseTwitterUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +138,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E933EA991C1CAB4300D899BF /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E96FD5F51C13DD1400EED512 /* AppDelegate.h */,
+				E96FD5F61C13DD1400EED512 /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		E933EA9A1C1CAB4E00D899BF /* Pick Election */ = {
+			isa = PBXGroup;
+			children = (
+				E96FD5F81C13DD1400EED512 /* PickElectionVC.h */,
+				E96FD5F91C13DD1400EED512 /* PickElectionVC.m */,
+			);
+			name = "Pick Election";
+			sourceTree = "<group>";
+		};
+		E933EA9B1C1CAB6900D899BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E96FD5FE1C13DD1400EED512 /* Assets.xcassets */,
+				E96FD6001C13DD1400EED512 /* LaunchScreen.storyboard */,
+				E96FD5FB1C13DD1400EED512 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E933EA9C1C1CAB7000D899BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E933EA991C1CAB4300D899BF /* App Delegate */,
+				E933EA9A1C1CAB4E00D899BF /* Pick Election */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E933EA9D1C1CAC1800D899BF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E933EA9E1C1CAC8000D899BF /* UserManager.h */,
+				E933EA9F1C1CAC8000D899BF /* UserManager.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		E933EAA41C1CADD300D899BF /* APIKey */ = {
+			isa = PBXGroup;
+			children = (
+				E933EAA51C1CADE400D899BF /* APIKey.h */,
+				E933EAA61C1CADE400D899BF /* APIKey.m */,
+			);
+			name = APIKey;
+			sourceTree = "<group>";
+		};
 		E96FD5E61C13DD1400EED512 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +216,9 @@
 		E96FD5F11C13DD1400EED512 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				E96FD5F51C13DD1400EED512 /* AppDelegate.h */,
-				E96FD5F61C13DD1400EED512 /* AppDelegate.m */,
-				E96FD5F81C13DD1400EED512 /* PickElectionVC.h */,
-				E96FD5F91C13DD1400EED512 /* PickElectionVC.m */,
-				E96FD5FB1C13DD1400EED512 /* Main.storyboard */,
-				E96FD5FE1C13DD1400EED512 /* Assets.xcassets */,
-				E96FD6001C13DD1400EED512 /* LaunchScreen.storyboard */,
-				E96FD6031C13DD1400EED512 /* Info.plist */,
+				E9EC9B4D1C13F0B6001B387C /* Model */,
+				E933EA9C1C1CAB7000D899BF /* Controller */,
+				E933EA9B1C1CAB6900D899BF /* View */,
 				E96FD5F21C13DD1400EED512 /* Supporting Files */,
 			);
 			path = DemoApp;
@@ -117,6 +227,8 @@
 		E96FD5F21C13DD1400EED512 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E96FD6031C13DD1400EED512 /* Info.plist */,
+				E9EC9B401C13EFE0001B387C /* Frameworks */,
 				E96FD5F31C13DD1400EED512 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +250,59 @@
 				E96FD6191C13DD1400EED512 /* Info.plist */,
 			);
 			path = DemoAppUITests;
+			sourceTree = "<group>";
+		};
+		E9EC9B401C13EFE0001B387C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E91325ED1C13FD3700F8FD4F /* libsqlite3.tbd */,
+				E91325EB1C13FD2C00F8FD4F /* libz.tbd */,
+				E91325E91C13FD1E00F8FD4F /* SystemConfiguration.framework */,
+				E91325E71C13FD1500F8FD4F /* StoreKit.framework */,
+				E91325E51C13FD0D00F8FD4F /* Security.framework */,
+				E91325E31C13FD0600F8FD4F /* QuartzCore.framework */,
+				E91325E11C13FCFF00F8FD4F /* CoreLocation.framework */,
+				E91325DF1C13FCF700F8FD4F /* CoreGraphics.framework */,
+				E91325DD1C13FCF000F8FD4F /* CFNetwork.framework */,
+				E91325DB1C13FCE800F8FD4F /* AudioToolbox.framework */,
+				E9EC9B411C13F005001B387C /* Bolts.framework */,
+				E9EC9B421C13F005001B387C /* Parse.framework */,
+				E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */,
+				E9EC9B441C13F005001B387C /* ParseFacebookUtilsV4.framework */,
+				E9EC9B451C13F005001B387C /* ParseTwitterUtils.framework */,
+				E9EC9B461C13F005001B387C /* ParseUI.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E9EC9B4D1C13F0B6001B387C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E933EAA41C1CADD300D899BF /* APIKey */,
+				E933EA9D1C1CAC1800D899BF /* User */,
+				E9EC9B511C13F126001B387C /* Election */,
+				E9EC9B551C13F5D4001B387C /* ElectionManager */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E9EC9B511C13F126001B387C /* Election */ = {
+			isa = PBXGroup;
+			children = (
+				E9EC9B571C13F801001B387C /* Election.h */,
+				E9EC9B581C13F801001B387C /* Election.m */,
+			);
+			name = Election;
+			sourceTree = "<group>";
+		};
+		E9EC9B551C13F5D4001B387C /* ElectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E933EAA11C1CACBC00D899BF /* ElectionManager.h */,
+				E933EAA21C1CACBC00D899BF /* ElectionManager.m */,
+			);
+			name = ElectionManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +437,10 @@
 			files = (
 				E96FD5FA1C13DD1400EED512 /* PickElectionVC.m in Sources */,
 				E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */,
+				E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */,
+				E933EAA71C1CADE400D899BF /* APIKey.m in Sources */,
+				E9EC9B591C13F801001B387C /* Election.m in Sources */,
+				E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */,
 				E96FD5F41C13DD1400EED512 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +580,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SureVoting.DemoApp;
@@ -423,6 +596,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SureVoting.DemoApp;
@@ -498,6 +675,7 @@
 				E96FD61E1C13DD1400EED512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E96FD61F1C13DD1400EED512 /* Build configuration list for PBXNativeTarget "DemoAppTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +684,7 @@
 				E96FD6211C13DD1400EED512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E96FD6221C13DD1400EED512 /* Build configuration list for PBXNativeTarget "DemoAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +693,7 @@
 				E96FD6241C13DD1400EED512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

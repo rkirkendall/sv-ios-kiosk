@@ -17,162 +17,146 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="ihD-e0-PxB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PickElection" translatesAutoresizingMaskIntoConstraints="NO" id="wDY-j1-xnL">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SfT-Hg-DW5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-0R-gez">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="TeI-t7-48b"/>
+                                    <constraint firstAttribute="width" constant="150" id="KRh-sD-lnz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="TeI-t7-48b"/>
+                                        <exclude reference="KRh-sD-lnz"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="TeI-t7-48b"/>
+                                        <include reference="KRh-sD-lnz"/>
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hx7-LU-dQF">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="198" id="oSG-1y-0La"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <state key="normal" title="Start Voting">
-                                    <color key="titleColor" red="0.094117647058823528" green="0.3411764705882353" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="oSG-1y-0La"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="oSG-1y-0La"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="startVotingTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9tR-zz-z8I"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your election ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0M-zY-5i3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your election ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So6-fU-Uo6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="pra-QC-dH5"/>
-                                    <constraint firstAttribute="width" constant="459" id="qbP-6X-QZH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.36862745098039218" green="0.65490196078431373" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="pra-QC-dH5"/>
-                                        <exclude reference="qbP-6X-QZH"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="pra-QC-dH5"/>
-                                        <include reference="qbP-6X-QZH"/>
-                                    </mask>
-                                </variation>
+                                <color key="shadowColor" red="0.78727184530201999" green="0.78727184530201999" blue="0.78727184530201999" alpha="0.41680743243243246" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid election ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMJ-Fy-Pqm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-hD-WPl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Enable Kiosk">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.3411764705882353" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startVotingTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZc-Jm-JHc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid election ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUh-jd-ee6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="8Fr-YE-Ort"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.97571290502644548" green="0.065521516372562691" blue="0.1017159448770628" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.91114140881432426" green="0.061185381916957951" blue="0.094984507058103573" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Fr-YE-Ort"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="8Fr-YE-Ort"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ihD-e0-PxB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="E4R-Xv-qnf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lMJ-Fy-Pqm" secondAttribute="bottom" constant="457" id="EH0-ci-tUc">
-                                <variation key="heightClass=regular-widthClass=regular" constant="444"/>
+                            <constraint firstItem="wDY-j1-xnL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9Bn-nm-fjg"/>
+                            <constraint firstItem="Pqb-0R-gez" firstAttribute="centerY" secondItem="wDY-j1-xnL" secondAttribute="centerY" id="B8p-ns-DFE">
+                                <variation key="widthClass=regular" constant="-63"/>
                             </constraint>
-                            <constraint firstItem="U0M-zY-5i3" firstAttribute="centerX" secondItem="SfT-Hg-DW5" secondAttribute="centerX" id="Ev1-rk-9at"/>
-                            <constraint firstItem="hx7-LU-dQF" firstAttribute="centerX" secondItem="SfT-Hg-DW5" secondAttribute="centerX" id="FPn-Iw-Ypg"/>
-                            <constraint firstItem="ihD-e0-PxB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G8B-cs-fxI"/>
-                            <constraint firstItem="SfT-Hg-DW5" firstAttribute="centerX" secondItem="ihD-e0-PxB" secondAttribute="centerX" id="M2L-MX-IJh"/>
-                            <constraint firstItem="SfT-Hg-DW5" firstAttribute="leading" secondItem="lMJ-Fy-Pqm" secondAttribute="trailing" constant="41" id="MFf-Hi-TNb">
-                                <variation key="heightClass=regular-widthClass=regular" constant="-231.5"/>
+                            <constraint firstItem="rq8-hD-WPl" firstAttribute="top" secondItem="Pqb-0R-gez" secondAttribute="bottom" constant="18" id="DAz-rk-8wB">
+                                <variation key="widthClass=regular" constant="22"/>
                             </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hx7-LU-dQF" secondAttribute="bottom" constant="293" id="WKn-uN-AHW">
-                                <variation key="heightClass=regular-widthClass=regular" constant="410"/>
+                            <constraint firstItem="Pqb-0R-gez" firstAttribute="top" secondItem="So6-fU-Uo6" secondAttribute="bottom" constant="20" id="DEh-pe-scl">
+                                <variation key="widthClass=regular" constant="33"/>
                             </constraint>
-                            <constraint firstItem="lMJ-Fy-Pqm" firstAttribute="centerY" secondItem="SfT-Hg-DW5" secondAttribute="centerY" id="blA-VO-OwH">
-                                <variation key="heightClass=regular-widthClass=regular" constant="36.5"/>
-                            </constraint>
-                            <constraint firstAttribute="trailing" secondItem="ihD-e0-PxB" secondAttribute="trailing" id="gPn-6k-lrq"/>
-                            <constraint firstItem="ihD-e0-PxB" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="kvL-p3-RhO"/>
-                            <constraint firstItem="hx7-LU-dQF" firstAttribute="top" secondItem="SfT-Hg-DW5" secondAttribute="bottom" constant="41" id="ljk-VU-8fI"/>
-                            <constraint firstItem="SfT-Hg-DW5" firstAttribute="top" secondItem="U0M-zY-5i3" secondAttribute="bottom" constant="8" symbolic="YES" id="mMh-nZ-3ih"/>
+                            <constraint firstItem="wDY-j1-xnL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gx2-7d-Dny"/>
+                            <constraint firstItem="Pqb-0R-gez" firstAttribute="centerX" secondItem="rq8-hD-WPl" secondAttribute="centerX" id="Jm8-PF-U15"/>
+                            <constraint firstItem="Pqb-0R-gez" firstAttribute="top" secondItem="UUh-jd-ee6" secondAttribute="bottom" constant="8" symbolic="YES" id="KCj-RS-waI"/>
+                            <constraint firstItem="Pqb-0R-gez" firstAttribute="centerX" secondItem="So6-fU-Uo6" secondAttribute="centerX" id="Wg3-au-P0i"/>
+                            <constraint firstItem="UUh-jd-ee6" firstAttribute="top" secondItem="So6-fU-Uo6" secondAttribute="bottom" constant="4" id="bIN-KW-XBO"/>
+                            <constraint firstItem="wDY-j1-xnL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eRO-V3-gYL"/>
+                            <constraint firstItem="UUh-jd-ee6" firstAttribute="centerX" secondItem="Pqb-0R-gez" secondAttribute="centerX" id="lMr-q4-4DV"/>
+                            <constraint firstAttribute="trailing" secondItem="wDY-j1-xnL" secondAttribute="trailing" id="qZa-iE-y2Y"/>
+                            <constraint firstItem="Pqb-0R-gez" firstAttribute="centerX" secondItem="wDY-j1-xnL" secondAttribute="centerX" id="x1z-L9-RQj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="ihD-e0-PxB"/>
-                                <exclude reference="SfT-Hg-DW5"/>
-                                <exclude reference="hx7-LU-dQF"/>
-                                <exclude reference="U0M-zY-5i3"/>
-                                <exclude reference="lMJ-Fy-Pqm"/>
+                                <exclude reference="wDY-j1-xnL"/>
+                                <exclude reference="Pqb-0R-gez"/>
+                                <exclude reference="So6-fU-Uo6"/>
+                                <exclude reference="rq8-hD-WPl"/>
+                                <exclude reference="UUh-jd-ee6"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="E4R-Xv-qnf"/>
-                                <exclude reference="G8B-cs-fxI"/>
-                                <exclude reference="gPn-6k-lrq"/>
-                                <exclude reference="kvL-p3-RhO"/>
-                                <exclude reference="Ev1-rk-9at"/>
-                                <exclude reference="blA-VO-OwH"/>
-                                <exclude reference="M2L-MX-IJh"/>
-                                <exclude reference="MFf-Hi-TNb"/>
-                                <exclude reference="mMh-nZ-3ih"/>
-                                <exclude reference="FPn-Iw-Ypg"/>
-                                <exclude reference="ljk-VU-8fI"/>
-                                <exclude reference="EH0-ci-tUc"/>
-                                <exclude reference="WKn-uN-AHW"/>
+                                <exclude reference="B8p-ns-DFE"/>
+                                <exclude reference="DEh-pe-scl"/>
+                                <exclude reference="Jm8-PF-U15"/>
+                                <exclude reference="KCj-RS-waI"/>
+                                <exclude reference="Wg3-au-P0i"/>
+                                <exclude reference="x1z-L9-RQj"/>
+                                <exclude reference="DAz-rk-8wB"/>
+                                <exclude reference="bIN-KW-XBO"/>
+                                <exclude reference="lMr-q4-4DV"/>
+                                <exclude reference="9Bn-nm-fjg"/>
+                                <exclude reference="Gx2-7d-Dny"/>
+                                <exclude reference="eRO-V3-gYL"/>
+                                <exclude reference="qZa-iE-y2Y"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
+                        <variation key="widthClass=regular">
                             <mask key="subviews">
-                                <include reference="ihD-e0-PxB"/>
-                                <include reference="SfT-Hg-DW5"/>
-                                <include reference="hx7-LU-dQF"/>
-                                <include reference="U0M-zY-5i3"/>
-                                <include reference="lMJ-Fy-Pqm"/>
+                                <include reference="wDY-j1-xnL"/>
+                                <include reference="Pqb-0R-gez"/>
+                                <include reference="So6-fU-Uo6"/>
+                                <include reference="rq8-hD-WPl"/>
+                                <include reference="UUh-jd-ee6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="E4R-Xv-qnf"/>
-                                <include reference="G8B-cs-fxI"/>
-                                <include reference="gPn-6k-lrq"/>
-                                <include reference="kvL-p3-RhO"/>
-                                <include reference="Ev1-rk-9at"/>
-                                <include reference="blA-VO-OwH"/>
-                                <include reference="M2L-MX-IJh"/>
-                                <include reference="MFf-Hi-TNb"/>
-                                <include reference="mMh-nZ-3ih"/>
-                                <include reference="FPn-Iw-Ypg"/>
-                                <include reference="ljk-VU-8fI"/>
-                                <include reference="EH0-ci-tUc"/>
-                                <include reference="WKn-uN-AHW"/>
+                                <include reference="B8p-ns-DFE"/>
+                                <include reference="DEh-pe-scl"/>
+                                <include reference="Jm8-PF-U15"/>
+                                <include reference="KCj-RS-waI"/>
+                                <include reference="Wg3-au-P0i"/>
+                                <include reference="x1z-L9-RQj"/>
+                                <include reference="DAz-rk-8wB"/>
+                                <include reference="bIN-KW-XBO"/>
+                                <include reference="lMr-q4-4DV"/>
+                                <include reference="9Bn-nm-fjg"/>
+                                <include reference="Gx2-7d-Dny"/>
+                                <include reference="eRO-V3-gYL"/>
+                                <include reference="qZa-iE-y2Y"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="electionIdField" destination="SfT-Hg-DW5" id="cHr-VG-F7E"/>
-                        <outlet property="invalidElectionMessage" destination="lMJ-Fy-Pqm" id="vgg-NS-RVQ"/>
-                        <outlet property="startVotingButton" destination="hx7-LU-dQF" id="pg7-4e-1KT"/>
+                        <outlet property="electionIdField" destination="Pqb-0R-gez" id="BI0-Zf-1H8"/>
+                        <outlet property="invalidElectionMessage" destination="UUh-jd-ee6" id="zG6-r2-viR"/>
+                        <outlet property="startVotingButton" destination="rq8-hD-WPl" id="SeR-ry-Jo1"/>
                         <segue destination="FLb-7m-eBY" kind="show" identifier="showTicketView" id="ywm-pA-OC2"/>
                     </connections>
                 </viewController>
@@ -185,13 +169,16 @@
             <objects>
                 <tableViewController id="Idl-Oa-LWL" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YEe-oR-Fho">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XwJ-Nt-gNv">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XwJ-Nt-gNv" id="ywn-Kd-RB5">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -228,6 +215,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Launch" width="768" height="1024"/>
+        <image name="PickElection" width="1024" height="768"/>
     </resources>
 </document>
