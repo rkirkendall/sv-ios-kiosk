@@ -10,6 +10,10 @@
 #import <Parse/PFObject+Subclass.h>
 @implementation Election
 
+@synthesize parties;
+@synthesize offices;
+@synthesize candidates;
+
 @dynamic name;
 @dynamic startDate;
 @dynamic endDate;

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "Election.h"
+#import "Party.h"
+#import "Kiosk.h"
+#import "Candidate.h"
+#import "Office.h"
 @interface ElectionManager : NSObject
 
 @property (nonatomic, strong) Election *currentElection;

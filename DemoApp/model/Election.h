@@ -14,4 +14,8 @@
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
 
+@property (nonatomic, strong) NSArray *parties;
+@property (nonatomic, strong) NSArray *offices;
+@property (nonatomic, strong) NSArray *candidates;
+
 @end

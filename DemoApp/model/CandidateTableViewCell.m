@@ -16,4 +16,9 @@
 
 - (IBAction)switchToggled:(id)sender {
 }
+
+-(void)setCandidate:(Candidate *)candidate{
+    _candidate = candidate;
+    self.titleLabel.text = [NSString stringWithFormat:@"%@ %@",self.candidate.firstName, self.candidate.lastName];
+}
 @end

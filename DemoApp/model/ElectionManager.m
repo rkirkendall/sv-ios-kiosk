@@ -26,11 +26,24 @@
 
 - (void)joinElectionWithId:(NSString *)eid withCompletion:(void (^)(BOOL valid))completion{
     self.currentElection = [Election objectWithoutDataWithObjectId:eid];
-    [self.currentElection fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+    
+    [self.currentElection fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (error || !object) {
             completion(NO);
         }
         NSLog(@"%@",self.currentElection.name);
+        
+        PFQuery *partyQuery = [PFQuery queryWithClassName:@"Party"];
+        self.currentElection.parties = [partyQuery findObjects];
+        
+        PFQuery *officeQuery = [PFQuery queryWithClassName:@"Office"];
+        [officeQuery whereKey:@"election" equalTo:self.currentElection];
+        self.currentElection.offices = [officeQuery findObjects];
+        
+        PFQuery *candidateQuery = [PFQuery queryWithClassName:@"Candidate"];
+        [candidateQuery whereKey:@"election" equalTo:self.currentElection];
+        self.currentElection.candidates = [candidateQuery findObjects];
+        
         completion(YES);
     }];
 }

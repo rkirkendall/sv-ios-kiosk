@@ -9,6 +9,7 @@
 #import "VoteTicketViewController.h"
 #import "CandidateTableViewCell.h"
 #import "SVUtil.h"
+#import "ElectionManager.h"
 #import <QuartzCore/QuartzCore.h>
 @interface VoteTicketViewController ()
 
@@ -19,8 +20,8 @@
 @implementation VoteTicketViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.dataSource = @[@"Ricky Kirkendall", @"Genghis Khan", @"Frank Sinatra"];
+    [super viewDidLoad];    
+    self.dataSource = [[[ElectionManager Manager] currentElection] candidates];
     self.title = @"Now Voting";
     [self.continueButton setColor:[SVUtil buttonGreen]];
     [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:20 weight:0.5]];
@@ -65,7 +66,7 @@
     }
     
     CandidateTableViewCell *candidateCell = (CandidateTableViewCell *)cell;
-    candidateCell.titleLabel.text = self.dataSource[indexPath.section];
+    candidateCell.candidate = self.dataSource[indexPath.section];
     candidateCell.layer.cornerRadius = 8;
     candidateCell.layer.masksToBounds = true;
     
