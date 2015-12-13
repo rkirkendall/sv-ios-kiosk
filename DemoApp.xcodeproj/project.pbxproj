@@ -21,7 +21,6 @@
 		E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA21C1CACBC00D899BF /* ElectionManager.m */; };
 		E933EAA71C1CADE400D899BF /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA61C1CADE400D899BF /* APIKey.m */; };
 		E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA91C1CB27900D899BF /* PickElectionVC.m */; };
-		E933EAAE1C1CBF7C00D899BF /* VoteTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAAD1C1CBF7C00D899BF /* VoteTicketViewController.m */; };
 		E96FD5F41C13DD1400EED512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F31C13DD1400EED512 /* main.m */; };
 		E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F61C13DD1400EED512 /* AppDelegate.m */; };
 		E96FD5FD1C13DD1400EED512 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96FD5FB1C13DD1400EED512 /* Main.storyboard */; };
@@ -29,6 +28,12 @@
 		E96FD6021C13DD1400EED512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96FD6001C13DD1400EED512 /* LaunchScreen.storyboard */; };
 		E96FD60D1C13DD1400EED512 /* DemoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD60C1C13DD1400EED512 /* DemoAppTests.m */; };
 		E96FD6181C13DD1400EED512 /* DemoAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD6171C13DD1400EED512 /* DemoAppUITests.m */; };
+		E9708D061C1CC45D00433013 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708CFF1C1CC45D00433013 /* BButton.m */; };
+		E9708D071C1CC45D00433013 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D011C1CC45D00433013 /* NSString+FontAwesome.m */; };
+		E9708D081C1CC45D00433013 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D031C1CC45D00433013 /* UIColor+BButton.m */; };
+		E9708D091C1CC45D00433013 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9708D051C1CC45D00433013 /* FontAwesome.ttf */; };
+		E9708D0D1C1CEA6300433013 /* CandidateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D0C1C1CEA6300433013 /* CandidateTableViewCell.m */; };
+		E9708D101C1CED0000433013 /* VoteTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D0F1C1CED0000433013 /* VoteTicketViewController.m */; };
 		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
 		E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B421C13F005001B387C /* Parse.framework */; };
 		E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */; };
@@ -74,8 +79,6 @@
 		E933EAA61C1CADE400D899BF /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIKey.m; path = model/APIKey.m; sourceTree = "<group>"; };
 		E933EAA81C1CB27900D899BF /* PickElectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickElectionVC.h; path = controller/PickElectionVC.h; sourceTree = "<group>"; };
 		E933EAA91C1CB27900D899BF /* PickElectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickElectionVC.m; path = controller/PickElectionVC.m; sourceTree = "<group>"; };
-		E933EAAC1C1CBF7C00D899BF /* VoteTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteTicketViewController.h; sourceTree = "<group>"; };
-		E933EAAD1C1CBF7C00D899BF /* VoteTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteTicketViewController.m; sourceTree = "<group>"; };
 		E96FD5EF1C13DD1400EED512 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96FD5F31C13DD1400EED512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E96FD5F51C13DD1400EED512 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +93,17 @@
 		E96FD6131C13DD1400EED512 /* DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96FD6171C13DD1400EED512 /* DemoAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppUITests.m; sourceTree = "<group>"; };
 		E96FD6191C13DD1400EED512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9708CFE1C1CC45D00433013 /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
+		E9708CFF1C1CC45D00433013 /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
+		E9708D001C1CC45D00433013 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		E9708D011C1CC45D00433013 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		E9708D021C1CC45D00433013 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
+		E9708D031C1CC45D00433013 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
+		E9708D051C1CC45D00433013 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		E9708D0B1C1CEA6300433013 /* CandidateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CandidateTableViewCell.h; path = model/CandidateTableViewCell.h; sourceTree = "<group>"; };
+		E9708D0C1C1CEA6300433013 /* CandidateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CandidateTableViewCell.m; path = model/CandidateTableViewCell.m; sourceTree = "<group>"; };
+		E9708D0E1C1CED0000433013 /* VoteTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoteTicketViewController.h; path = controller/VoteTicketViewController.h; sourceTree = "<group>"; };
+		E9708D0F1C1CED0000433013 /* VoteTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoteTicketViewController.m; path = controller/VoteTicketViewController.m; sourceTree = "<group>"; };
 		E9EC9B411C13F005001B387C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E9EC9B421C13F005001B387C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -200,8 +214,8 @@
 		E933EAAB1C1CBF5E00D899BF /* Vote Ticket */ = {
 			isa = PBXGroup;
 			children = (
-				E933EAAC1C1CBF7C00D899BF /* VoteTicketViewController.h */,
-				E933EAAD1C1CBF7C00D899BF /* VoteTicketViewController.m */,
+				E9708D0E1C1CED0000433013 /* VoteTicketViewController.h */,
+				E9708D0F1C1CED0000433013 /* VoteTicketViewController.m */,
 			);
 			name = "Vote Ticket";
 			sourceTree = "<group>";
@@ -240,6 +254,7 @@
 		E96FD5F21C13DD1400EED512 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9708CFC1C1CC45D00433013 /* BButton */,
 				E96FD6031C13DD1400EED512 /* Info.plist */,
 				E9EC9B401C13EFE0001B387C /* Frameworks */,
 				E96FD5F31C13DD1400EED512 /* main.m */,
@@ -263,6 +278,45 @@
 				E96FD6191C13DD1400EED512 /* Info.plist */,
 			);
 			path = DemoAppUITests;
+			sourceTree = "<group>";
+		};
+		E9708CFC1C1CC45D00433013 /* BButton */ = {
+			isa = PBXGroup;
+			children = (
+				E9708CFD1C1CC45D00433013 /* Classes */,
+				E9708D041C1CC45D00433013 /* resources */,
+			);
+			path = BButton;
+			sourceTree = "<group>";
+		};
+		E9708CFD1C1CC45D00433013 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E9708CFE1C1CC45D00433013 /* BButton.h */,
+				E9708CFF1C1CC45D00433013 /* BButton.m */,
+				E9708D001C1CC45D00433013 /* NSString+FontAwesome.h */,
+				E9708D011C1CC45D00433013 /* NSString+FontAwesome.m */,
+				E9708D021C1CC45D00433013 /* UIColor+BButton.h */,
+				E9708D031C1CC45D00433013 /* UIColor+BButton.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E9708D041C1CC45D00433013 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9708D051C1CC45D00433013 /* FontAwesome.ttf */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E9708D0A1C1CEA2A00433013 /* Candidate Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E9708D0B1C1CEA6300433013 /* CandidateTableViewCell.h */,
+				E9708D0C1C1CEA6300433013 /* CandidateTableViewCell.m */,
+			);
+			name = "Candidate Cell";
 			sourceTree = "<group>";
 		};
 		E9EC9B401C13EFE0001B387C /* Frameworks */ = {
@@ -292,6 +346,7 @@
 		E9EC9B4D1C13F0B6001B387C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9708D0A1C1CEA2A00433013 /* Candidate Cell */,
 				E933EAA41C1CADD300D899BF /* APIKey */,
 				E933EA9D1C1CAC1800D899BF /* User */,
 				E9EC9B511C13F126001B387C /* Election */,
@@ -424,6 +479,7 @@
 				E96FD6021C13DD1400EED512 /* LaunchScreen.storyboard in Resources */,
 				E96FD5FF1C13DD1400EED512 /* Assets.xcassets in Resources */,
 				E96FD5FD1C13DD1400EED512 /* Main.storyboard in Resources */,
+				E9708D091C1CC45D00433013 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,13 +504,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9708D071C1CC45D00433013 /* NSString+FontAwesome.m in Sources */,
 				E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */,
+				E9708D101C1CED0000433013 /* VoteTicketViewController.m in Sources */,
 				E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */,
+				E9708D0D1C1CEA6300433013 /* CandidateTableViewCell.m in Sources */,
+				E9708D081C1CC45D00433013 /* UIColor+BButton.m in Sources */,
 				E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */,
 				E933EAA71C1CADE400D899BF /* APIKey.m in Sources */,
 				E9EC9B591C13F801001B387C /* Election.m in Sources */,
+				E9708D061C1CC45D00433013 /* BButton.m in Sources */,
 				E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */,
-				E933EAAE1C1CBF7C00D899BF /* VoteTicketViewController.m in Sources */,
 				E96FD5F41C13DD1400EED512 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

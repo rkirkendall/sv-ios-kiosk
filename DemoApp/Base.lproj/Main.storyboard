@@ -187,6 +187,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CFE-To-0w3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GEC-1R-rRw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoftLight" translatesAutoresizingMaskIntoConstraints="NO" id="b0R-VL-whQ">
@@ -196,27 +197,68 @@
                                     <rect key="frame" x="0.0" y="64" width="800" height="536"/>
                                 </variation>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-dY-z2R">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-dY-z2R">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="azM-lg-gpF" customClass="CandidateTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="azM-lg-gpF" id="xRP-FF-8f6">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Bernie Sanders [DEM]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi4-AR-uBX">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="11" width="304" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvQ-ux-opx">
+                                                    <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                    <animations/>
+                                                    <variation key="widthClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="373" y="6" width="51" height="31"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="switchToggled:" destination="azM-lg-gpF" eventType="valueChanged" id="t6r-8c-5SO"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <animations/>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="wi4-AR-uBX"/>
+                                                    <exclude reference="VvQ-ux-opx"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=regular">
+                                                <mask key="subviews">
+                                                    <include reference="wi4-AR-uBX"/>
+                                                    <include reference="VvQ-ux-opx"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="pickedSwitch" destination="VvQ-ux-opx" id="9K3-rZ-Z9I"/>
+                                            <outlet property="titleLabel" destination="wi4-AR-uBX" id="yPN-qq-hXK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="310" y="132" width="430" height="448"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="JkB-EG-rMQ" id="or8-VL-fY5"/>
+                                    <outlet property="delegate" destination="JkB-EG-rMQ" id="WBf-yy-cYy"/>
+                                </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voting for: Governors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWL-Py-upQ">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.70476246843434343" green="0.70476246843434343" blue="0.70476246843434343" alpha="0.46597867398648657" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="0.0" height="2"/>
-                                <variation key="widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="310" y="66" width="430" height="60"/>
-                                </variation>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SVLogo" translatesAutoresizingMaskIntoConstraints="NO" id="S2I-gZ-uxX">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
@@ -248,14 +290,29 @@
                                     <rect key="frame" x="33" y="325" width="254" height="45"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlY-te-jIw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlY-te-jIw" customClass="BButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Continue"/>
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="33" y="393" width="114" height="44"/>
                                 </variation>
+                                <connections>
+                                    <action selector="continueTapped:" destination="JkB-EG-rMQ" eventType="touchUpInside" id="YEX-KA-bZX"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voting for: Governors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWL-Py-upQ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.70476246843434343" green="0.70476246843434343" blue="0.70476246843434343" alpha="0.46597867398648657" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="310" y="64" width="430" height="60"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,26 +320,34 @@
                             <mask key="subviews">
                                 <exclude reference="b0R-VL-whQ"/>
                                 <exclude reference="vxX-dY-z2R"/>
-                                <exclude reference="TWL-Py-upQ"/>
                                 <exclude reference="S2I-gZ-uxX"/>
                                 <exclude reference="2i8-wS-bLk"/>
                                 <exclude reference="2ah-s1-r3U"/>
                                 <exclude reference="OlY-te-jIw"/>
+                                <exclude reference="TWL-Py-upQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="subviews">
                                 <include reference="b0R-VL-whQ"/>
                                 <include reference="vxX-dY-z2R"/>
-                                <include reference="TWL-Py-upQ"/>
                                 <include reference="S2I-gZ-uxX"/>
                                 <include reference="2i8-wS-bLk"/>
                                 <include reference="2ah-s1-r3U"/>
                                 <include reference="OlY-te-jIw"/>
+                                <include reference="TWL-Py-upQ"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="chosenVotesLabel" destination="2i8-wS-bLk" id="GMh-St-nch"/>
+                        <outlet property="continueButton" destination="OlY-te-jIw" id="vmt-Js-06I"/>
+                        <outlet property="logoImageView" destination="S2I-gZ-uxX" id="uel-29-3JF"/>
+                        <outlet property="remainingVotesLabel" destination="2ah-s1-r3U" id="Zcd-cn-WeB"/>
+                        <outlet property="tableView" destination="vxX-dY-z2R" id="usd-XJ-G0Z"/>
+                        <outlet property="votingForLabel" destination="TWL-Py-upQ" id="Kwd-n3-5oM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKF-xm-RQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
