@@ -19,6 +19,7 @@
 }
 
 + (void)load {
+    [super load];
     [self registerSubclass];
 }
 
