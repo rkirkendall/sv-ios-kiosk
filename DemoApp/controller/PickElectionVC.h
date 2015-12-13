@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BButton.h"
 @interface PickElectionVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *electionIdField;
 
-@property (weak, nonatomic) IBOutlet UIButton *startVotingButton;
+@property (weak, nonatomic) IBOutlet BButton *startVotingButton;
 
 - (IBAction)startVotingTapped:(id)sender;
 

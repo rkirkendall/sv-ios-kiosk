@@ -34,6 +34,7 @@
 		E9708D091C1CC45D00433013 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9708D051C1CC45D00433013 /* FontAwesome.ttf */; };
 		E9708D0D1C1CEA6300433013 /* CandidateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D0C1C1CEA6300433013 /* CandidateTableViewCell.m */; };
 		E9708D101C1CED0000433013 /* VoteTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D0F1C1CED0000433013 /* VoteTicketViewController.m */; };
+		E9708D141C1D152700433013 /* SVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D131C1D152700433013 /* SVUtil.m */; };
 		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
 		E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B421C13F005001B387C /* Parse.framework */; };
 		E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */; };
@@ -104,6 +105,8 @@
 		E9708D0C1C1CEA6300433013 /* CandidateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CandidateTableViewCell.m; path = model/CandidateTableViewCell.m; sourceTree = "<group>"; };
 		E9708D0E1C1CED0000433013 /* VoteTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoteTicketViewController.h; path = controller/VoteTicketViewController.h; sourceTree = "<group>"; };
 		E9708D0F1C1CED0000433013 /* VoteTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoteTicketViewController.m; path = controller/VoteTicketViewController.m; sourceTree = "<group>"; };
+		E9708D121C1D152700433013 /* SVUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVUtil.h; path = model/SVUtil.h; sourceTree = "<group>"; };
+		E9708D131C1D152700433013 /* SVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVUtil.m; path = model/SVUtil.m; sourceTree = "<group>"; };
 		E9EC9B411C13F005001B387C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E9EC9B421C13F005001B387C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -319,6 +322,15 @@
 			name = "Candidate Cell";
 			sourceTree = "<group>";
 		};
+		E9708D111C1D151400433013 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E9708D121C1D152700433013 /* SVUtil.h */,
+				E9708D131C1D152700433013 /* SVUtil.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		E9EC9B401C13EFE0001B387C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +358,7 @@
 		E9EC9B4D1C13F0B6001B387C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9708D111C1D151400433013 /* Util */,
 				E9708D0A1C1CEA2A00433013 /* Candidate Cell */,
 				E933EAA41C1CADD300D899BF /* APIKey */,
 				E933EA9D1C1CAC1800D899BF /* User */,
@@ -507,6 +520,7 @@
 				E9708D071C1CC45D00433013 /* NSString+FontAwesome.m in Sources */,
 				E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */,
 				E9708D101C1CED0000433013 /* VoteTicketViewController.m in Sources */,
+				E9708D141C1D152700433013 /* SVUtil.m in Sources */,
 				E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */,
 				E9708D0D1C1CEA6300433013 /* CandidateTableViewCell.m in Sources */,
 				E9708D081C1CC45D00433013 /* UIColor+BButton.m in Sources */,

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-0R-gez">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-0R-gez">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -50,17 +50,6 @@
                                 <color key="shadowColor" red="0.78727184530201999" green="0.78727184530201999" blue="0.78727184530201999" alpha="0.41680743243243246" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-hD-WPl">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Enable Kiosk">
-                                    <color key="titleColor" red="0.094117647058823528" green="0.3411764705882353" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startVotingTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZc-Jm-JHc"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid election ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUh-jd-ee6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -81,6 +70,37 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-hD-WPl" customClass="BButton">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="FST-Ty-lYD">
+                                        <variation key="widthClass=regular" constant="126"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="42" id="kle-cX-mXq">
+                                        <variation key="widthClass=regular" constant="47"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Enable Kiosk">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.3411764705882353" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FST-Ty-lYD"/>
+                                        <exclude reference="kle-cX-mXq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="FST-Ty-lYD"/>
+                                        <include reference="kle-cX-mXq"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="startVotingTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZc-Jm-JHc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -90,7 +110,7 @@
                                 <variation key="widthClass=regular" constant="-63"/>
                             </constraint>
                             <constraint firstItem="rq8-hD-WPl" firstAttribute="top" secondItem="Pqb-0R-gez" secondAttribute="bottom" constant="18" id="DAz-rk-8wB">
-                                <variation key="widthClass=regular" constant="22"/>
+                                <variation key="widthClass=regular" constant="24"/>
                             </constraint>
                             <constraint firstItem="Pqb-0R-gez" firstAttribute="top" secondItem="So6-fU-Uo6" secondAttribute="bottom" constant="20" id="DEh-pe-scl">
                                 <variation key="widthClass=regular" constant="33"/>
@@ -101,6 +121,7 @@
                             <constraint firstItem="Pqb-0R-gez" firstAttribute="centerX" secondItem="So6-fU-Uo6" secondAttribute="centerX" id="Wg3-au-P0i"/>
                             <constraint firstItem="UUh-jd-ee6" firstAttribute="top" secondItem="So6-fU-Uo6" secondAttribute="bottom" constant="4" id="bIN-KW-XBO"/>
                             <constraint firstItem="wDY-j1-xnL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eRO-V3-gYL"/>
+                            <constraint firstItem="rq8-hD-WPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iCT-eR-t3I"/>
                             <constraint firstItem="UUh-jd-ee6" firstAttribute="centerX" secondItem="Pqb-0R-gez" secondAttribute="centerX" id="lMr-q4-4DV"/>
                             <constraint firstAttribute="trailing" secondItem="wDY-j1-xnL" secondAttribute="trailing" id="qZa-iE-y2Y"/>
                             <constraint firstItem="Pqb-0R-gez" firstAttribute="centerX" secondItem="wDY-j1-xnL" secondAttribute="centerX" id="x1z-L9-RQj"/>
@@ -110,10 +131,16 @@
                                 <exclude reference="wDY-j1-xnL"/>
                                 <exclude reference="Pqb-0R-gez"/>
                                 <exclude reference="So6-fU-Uo6"/>
-                                <exclude reference="rq8-hD-WPl"/>
                                 <exclude reference="UUh-jd-ee6"/>
+                                <exclude reference="rq8-hD-WPl"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9Bn-nm-fjg"/>
+                                <exclude reference="Gx2-7d-Dny"/>
+                                <exclude reference="eRO-V3-gYL"/>
+                                <exclude reference="qZa-iE-y2Y"/>
+                                <exclude reference="bIN-KW-XBO"/>
+                                <exclude reference="lMr-q4-4DV"/>
                                 <exclude reference="B8p-ns-DFE"/>
                                 <exclude reference="DEh-pe-scl"/>
                                 <exclude reference="Jm8-PF-U15"/>
@@ -121,12 +148,7 @@
                                 <exclude reference="Wg3-au-P0i"/>
                                 <exclude reference="x1z-L9-RQj"/>
                                 <exclude reference="DAz-rk-8wB"/>
-                                <exclude reference="bIN-KW-XBO"/>
-                                <exclude reference="lMr-q4-4DV"/>
-                                <exclude reference="9Bn-nm-fjg"/>
-                                <exclude reference="Gx2-7d-Dny"/>
-                                <exclude reference="eRO-V3-gYL"/>
-                                <exclude reference="qZa-iE-y2Y"/>
+                                <exclude reference="iCT-eR-t3I"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -134,30 +156,31 @@
                                 <include reference="wDY-j1-xnL"/>
                                 <include reference="Pqb-0R-gez"/>
                                 <include reference="So6-fU-Uo6"/>
-                                <include reference="rq8-hD-WPl"/>
                                 <include reference="UUh-jd-ee6"/>
+                                <include reference="rq8-hD-WPl"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="B8p-ns-DFE"/>
-                                <include reference="DEh-pe-scl"/>
-                                <include reference="Jm8-PF-U15"/>
-                                <include reference="KCj-RS-waI"/>
-                                <include reference="Wg3-au-P0i"/>
-                                <include reference="x1z-L9-RQj"/>
-                                <include reference="DAz-rk-8wB"/>
-                                <include reference="bIN-KW-XBO"/>
-                                <include reference="lMr-q4-4DV"/>
                                 <include reference="9Bn-nm-fjg"/>
                                 <include reference="Gx2-7d-Dny"/>
                                 <include reference="eRO-V3-gYL"/>
                                 <include reference="qZa-iE-y2Y"/>
+                                <include reference="bIN-KW-XBO"/>
+                                <include reference="lMr-q4-4DV"/>
+                                <include reference="B8p-ns-DFE"/>
+                                <include reference="DEh-pe-scl"/>
+                                <exclude reference="Jm8-PF-U15"/>
+                                <include reference="KCj-RS-waI"/>
+                                <include reference="Wg3-au-P0i"/>
+                                <include reference="x1z-L9-RQj"/>
+                                <include reference="DAz-rk-8wB"/>
+                                <include reference="iCT-eR-t3I"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="electionIdField" destination="Pqb-0R-gez" id="BI0-Zf-1H8"/>
                         <outlet property="invalidElectionMessage" destination="UUh-jd-ee6" id="zG6-r2-viR"/>
-                        <outlet property="startVotingButton" destination="rq8-hD-WPl" id="SeR-ry-Jo1"/>
+                        <outlet property="startVotingButton" destination="rq8-hD-WPl" id="z3r-ui-0zY"/>
                         <segue destination="FLb-7m-eBY" kind="presentation" identifier="showTicketView" id="ywm-pA-OC2"/>
                     </connections>
                 </viewController>
@@ -205,11 +228,11 @@
                                     <constraint firstAttribute="width" constant="430" id="dS4-cm-Mmh"/>
                                     <constraint firstAttribute="height" constant="60" id="wUU-7K-b4c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.70476246843434343" green="0.70476246843434343" blue="0.70476246843434343" alpha="0.46597867398648657" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="0.0" height="2"/>
+                                <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="-1" height="2"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="dS4-cm-Mmh"/>
@@ -243,11 +266,11 @@
                                                 <variation key="widthClass=regular" constant="249"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.70476246840000001" green="0.70476246840000001" blue="0.70476246840000001" alpha="0.46597867399999998" colorSpace="calibratedRGB"/>
-                                        <size key="shadowOffset" width="0.0" height="2"/>
+                                        <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="-1" height="2"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="fc8-el-Xo1"/>
@@ -273,11 +296,11 @@
                                                 <variation key="widthClass=regular" constant="60"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="33"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.70476246840000001" green="0.70476246840000001" blue="0.70476246840000001" alpha="0.46597867399999998" colorSpace="calibratedRGB"/>
-                                        <size key="shadowOffset" width="0.0" height="2"/>
+                                        <color key="shadowColor" red="0.64484690653636367" green="0.64484690653636367" blue="0.64484690653636367" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="-1" height="2"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="ElF-ic-1Aa"/>
@@ -303,7 +326,7 @@
                                                 <variation key="widthClass=regular" constant="142"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <state key="normal" title="Continue"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -379,13 +402,13 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-dY-z2R">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-dY-z2R">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="azM-lg-gpF" customClass="CandidateTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="azM-lg-gpF" customClass="CandidateTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="azM-lg-gpF" id="xRP-FF-8f6">
@@ -394,7 +417,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Bernie Sanders [DEM]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi4-AR-uBX">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -413,7 +436,9 @@
                                                 <constraint firstItem="VvQ-ux-opx" firstAttribute="centerY" secondItem="xRP-FF-8f6" secondAttribute="centerY" id="7uz-Q5-Gd1"/>
                                                 <constraint firstItem="VvQ-ux-opx" firstAttribute="trailing" secondItem="xRP-FF-8f6" secondAttribute="trailingMargin" id="H6s-9d-Wry"/>
                                                 <constraint firstItem="VvQ-ux-opx" firstAttribute="centerY" secondItem="wi4-AR-uBX" secondAttribute="centerY" id="YZs-9Q-mDP"/>
-                                                <constraint firstItem="wi4-AR-uBX" firstAttribute="top" secondItem="xRP-FF-8f6" secondAttribute="topMargin" constant="3" id="Zqq-lI-eEo"/>
+                                                <constraint firstItem="wi4-AR-uBX" firstAttribute="top" secondItem="xRP-FF-8f6" secondAttribute="topMargin" constant="3" id="Zqq-lI-eEo">
+                                                    <variation key="widthClass=regular" constant="2"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">

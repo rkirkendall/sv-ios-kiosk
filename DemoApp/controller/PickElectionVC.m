@@ -8,6 +8,7 @@
 
 #import "PickElectionVC.h"
 #import "ElectionManager.h"
+#import "SVUtil.h"
 @interface PickElectionVC ()
 
 @end
@@ -18,6 +19,8 @@
     [super viewWillAppear:animated];
     self.electionIdField.text = @"";
     self.invalidElectionMessage.hidden = YES;
+    [self.startVotingButton setColor:[SVUtil buttonGreen]];
+    [self.startVotingButton.titleLabel setFont:[UIFont systemFontOfSize:16 weight:0.4]];
 }
 
 - (IBAction)startVotingTapped:(id)sender {

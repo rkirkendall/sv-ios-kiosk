@@ -8,6 +8,8 @@
 
 #import "VoteTicketViewController.h"
 #import "CandidateTableViewCell.h"
+#import "SVUtil.h"
+#import <QuartzCore/QuartzCore.h>
 @interface VoteTicketViewController ()
 
 @property (nonatomic, strong) NSArray *dataSource;
@@ -20,6 +22,8 @@
     [super viewDidLoad];
     self.dataSource = @[@"Ricky Kirkendall", @"Genghis Khan", @"Frank Sinatra"];
     self.title = @"Now Voting";
+    [self.continueButton setColor:[SVUtil buttonGreen]];
+    [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:20 weight:0.5]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +39,22 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10.0; // you can have your own choice, of course
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 54;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -46,6 +66,9 @@
     
     CandidateTableViewCell *candidateCell = (CandidateTableViewCell *)cell;
     candidateCell.titleLabel.text = self.dataSource[indexPath.section];
+    candidateCell.layer.cornerRadius = 8;
+    candidateCell.layer.masksToBounds = true;
+    
     
     return candidateCell;
 }
