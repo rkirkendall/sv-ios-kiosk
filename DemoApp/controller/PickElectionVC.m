@@ -26,6 +26,7 @@
             self.invalidElectionMessage.hidden = NO;
         }else{
             self.invalidElectionMessage.hidden = YES;
+            [self performSegueWithIdentifier:@"showTicketView" sender:self];
         }
     }];
 }

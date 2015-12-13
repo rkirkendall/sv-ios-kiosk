@@ -7,8 +7,10 @@
 //
 
 #import "VoteTicketViewController.h"
-
+#import "CandidateTableViewCell.h"
 @interface VoteTicketViewController ()
+
+@property (nonatomic, strong) NSArray *dataSource;
 
 @end
 
@@ -16,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.dataSource = @[@"Ricky Kirkendall", @"Genghis Khan", @"Frank Sinatra"];
+    self.title = @"Now Voting";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,16 +27,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.dataSource.count;
 }
-*/
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    CandidateTableViewCell *candidateCell = (CandidateTableViewCell *)cell;
+    candidateCell.titleLabel.text = self.dataSource[indexPath.section];
+    
+    return candidateCell;
+}
 - (IBAction)continueTapped:(id)sender {
+    
 }
 @end
