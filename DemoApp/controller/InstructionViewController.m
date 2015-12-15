@@ -7,7 +7,7 @@
 //
 
 #import "InstructionViewController.h"
-
+#import "SVUtil.h"
 @interface InstructionViewController ()
 
 @end
@@ -16,7 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.continueButton setColor:[SVUtil buttonGreen]];
+    [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:20 weight:0.5]];
+    
+    self.firstCellView.layer.cornerRadius = 8;
+    self.firstCellView.layer.masksToBounds = true;
+    
+    self.secondCellView.layer.cornerRadius = 8;
+    self.secondCellView.layer.masksToBounds = true;
+    self.secondCellView.backgroundColor = [SVUtil voteSelectionGreen];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)continueTapped:(id)sender {
+}
 @end

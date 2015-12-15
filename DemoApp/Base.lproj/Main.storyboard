@@ -312,7 +312,7 @@
                                                     <rect key="frame" x="8" y="16" width="186" height="21"/>
                                                 </variation>
                                             </label>
-                                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YIM-wn-E90">
+                                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIM-wn-E90">
                                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=regular" fixedFrame="YES">
@@ -349,7 +349,7 @@
                                                     <rect key="frame" x="8" y="17" width="186" height="21"/>
                                                 </variation>
                                             </label>
-                                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-m2-qWK">
+                                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-m2-qWK">
                                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                                 <animations/>
                                                 <variation key="widthClass=regular" fixedFrame="YES">
@@ -423,6 +423,9 @@
                                         <include reference="kLj-GJ-vPK"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="continueTapped:" destination="U21-AM-1cB" eventType="touchUpInside" id="tn7-zE-Fhq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -433,7 +436,7 @@
                             </constraint>
                             <constraint firstItem="VVI-Fj-4G7" firstAttribute="leading" secondItem="FBG-B7-MFo" secondAttribute="leading" id="41Z-5j-8RP"/>
                             <constraint firstItem="s69-g8-kOx" firstAttribute="top" secondItem="FBG-B7-MFo" secondAttribute="bottom" constant="17.5" id="6lF-xf-SOw">
-                                <variation key="widthClass=regular" constant="31"/>
+                                <variation key="widthClass=regular" constant="40"/>
                             </constraint>
                             <constraint firstItem="s69-g8-kOx" firstAttribute="centerX" secondItem="mkl-qR-zwf" secondAttribute="centerX" id="6os-gD-2Nc">
                                 <variation key="widthClass=regular" constant="88"/>
@@ -459,7 +462,7 @@
                             </constraint>
                             <constraint firstItem="E9B-iF-6uG" firstAttribute="top" secondItem="EUl-FA-WLa" secondAttribute="bottom" constant="36" id="gU6-gH-Ef7"/>
                             <constraint firstItem="EUl-FA-WLa" firstAttribute="top" secondItem="s69-g8-kOx" secondAttribute="bottom" constant="16" id="iT2-PZ-1kl">
-                                <variation key="widthClass=regular" constant="73"/>
+                                <variation key="widthClass=regular" constant="45"/>
                             </constraint>
                             <constraint firstItem="l6x-pV-jzW" firstAttribute="leading" secondItem="mkl-qR-zwf" secondAttribute="leading" id="qbz-Xc-lsv"/>
                             <constraint firstItem="E9B-iF-6uG" firstAttribute="top" secondItem="s69-g8-kOx" secondAttribute="bottom" constant="110" id="swR-ol-x6G">
@@ -539,6 +542,9 @@
                     <navigationItem key="navigationItem" id="1Hx-Si-fA9"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="continueButton" destination="EUl-FA-WLa" id="qmW-nn-eD0"/>
+                        <outlet property="firstCellView" destination="Dnc-tg-id0" id="2br-in-zgn"/>
+                        <outlet property="secondCellView" destination="IgI-aL-8YJ" id="8gk-l2-cOW"/>
                         <segue destination="JkB-EG-rMQ" kind="show" identifier="showTicketView" id="R0a-gB-pog"/>
                     </connections>
                 </viewController>
