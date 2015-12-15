@@ -14,4 +14,8 @@
     return [UIColor colorWithRed:0.106 green:0.667 blue:0.376 alpha:1];
 }
 
++ (UIColor *)voteSelectionGreen{
+    return [UIColor colorWithRed:0.627 green:0.996 blue:0.694 alpha:1]; /*#a0feb1*/
+}
+
 @end

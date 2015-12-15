@@ -11,11 +11,8 @@
 @interface PickElectionVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *electionIdField;
-
 @property (weak, nonatomic) IBOutlet BButton *startVotingButton;
-
 - (IBAction)startVotingTapped:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UILabel *invalidElectionMessage;
 
 

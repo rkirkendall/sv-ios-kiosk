@@ -14,22 +14,50 @@
 @interface VoteTicketViewController ()
 
 @property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) Office *selectedOffice;
 
 @end
 
 @implementation VoteTicketViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
-    self.dataSource = [[[ElectionManager Manager] currentElection] candidates];
-    self.title = @"Now Voting";
+    [super viewDidLoad];
     [self.continueButton setColor:[SVUtil buttonGreen]];
     [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:20 weight:0.5]];
+    self.title = [NSString stringWithFormat:@"Voting in \"%@\"",[[ElectionManager Manager] currentElection].name];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (!self.officeIndex) {
+        self.officeIndex = 0;
+    }
+    
+    self.selectedOffice = [[[ElectionManager Manager]currentElection]offices][self.officeIndex];
+    self.dataSource = [NSArray arrayWithArray:self.selectedOffice.candidates];
+    [self drawLabels];
+}
+
+- (void) drawLabels{
+    [self updateChosenVotesLabel];
+    [self updateRemainingVotesLabel];
+    [self updateVotingForLabel];
+}
+
+- (void) updateRemainingVotesLabel{
+    NSInteger remaining = self.selectedOffice.limit.integerValue - self.selectedOffice.votesCast.integerValue;
+    NSString *string = [NSString stringWithFormat:@"%@ votes remaining.",[NSNumber numberWithInteger:remaining]];
+    self.remainingVotesLabel.text = string;
+    
+}
+- (void) updateChosenVotesLabel{
+    NSString *string = [NSString stringWithFormat:@"You have chosen %@ out of %@ votes.",self.selectedOffice.votesCast, self.selectedOffice.limit];
+    self.chosenVotesLabel.text = string;
+}
+
+- (void) updateVotingForLabel{
+    NSString *string = [NSString stringWithFormat:@"Voting for: %@",self.selectedOffice.name];
+    self.votingForLabel.text = string;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -66,6 +94,7 @@
     }
     
     CandidateTableViewCell *candidateCell = (CandidateTableViewCell *)cell;
+    candidateCell.index = indexPath.section;
     candidateCell.candidate = self.dataSource[indexPath.section];
     candidateCell.layer.cornerRadius = 8;
     candidateCell.layer.masksToBounds = true;
@@ -73,6 +102,21 @@
     
     return candidateCell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CandidateTableViewCell *cell = (CandidateTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    BOOL s = cell.selected;
+    [cell setSelected:s];
+    [self drawLabels];
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    CandidateTableViewCell *cell = (CandidateTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    BOOL s = cell.selected;
+    [cell setSelected:s];
+    [self drawLabels];
+}
+
 - (IBAction)continueTapped:(id)sender {
     
 }

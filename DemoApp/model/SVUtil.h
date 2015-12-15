@@ -11,4 +11,5 @@
 @interface SVUtil : NSObject
 
 + (UIColor *)buttonGreen;
++ (UIColor *)voteSelectionGreen;
 @end

@@ -15,4 +15,8 @@
 @property (nonatomic, strong) NSNumber *order;
 @property (nonatomic, strong) Election *election;
 
+- (NSArray *)candidates;
+
+- (NSNumber *)votesCast;
+
 @end

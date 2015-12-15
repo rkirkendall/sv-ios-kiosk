@@ -18,4 +18,6 @@
 @property (nonatomic, strong) Office *office;
 @property (nonatomic, strong) Party *party;
 
+@property (nonatomic, readwrite) BOOL votedFor;
+
 @end

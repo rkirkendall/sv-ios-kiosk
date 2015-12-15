@@ -17,6 +17,8 @@
 @dynamic office;
 @dynamic party;
 
+@synthesize votedFor;
+
 + (NSString *)parseClassName {
     return @"Candidate";
 }

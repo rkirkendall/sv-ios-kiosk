@@ -7,7 +7,8 @@
 //
 
 #import "Office.h"
-
+#import "Candidate.h"
+#import "ElectionManager.h"
 @implementation Office
 
 @dynamic limit;
@@ -22,6 +23,27 @@
 + (void)load {
     [super load];
     [self registerSubclass];
+}
+
+-(NSNumber *)votesCast{
+    NSInteger toReturn = 0;
+    for (Candidate *can in self.candidates) {
+        if (can.votedFor) {
+            toReturn++;
+        }
+    }
+    return [NSNumber numberWithInteger:toReturn];
+}
+
+- (NSArray *)candidates{
+    NSArray *all = [[ElectionManager Manager] currentElection].candidates;
+    NSMutableArray *forOffice = [NSMutableArray array];
+    for (Candidate *c in all) {
+        if ([c.office.objectId isEqualToString:self.objectId]) {
+            [forOffice addObject:c];
+        }
+    }
+    return forOffice;
 }
 
 @end

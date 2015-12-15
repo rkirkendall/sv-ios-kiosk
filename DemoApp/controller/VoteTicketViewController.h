@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *votingForLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic, readwrite) NSInteger officeIndex;
 
 - (IBAction)continueTapped:(id)sender;
 

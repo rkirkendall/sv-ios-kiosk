@@ -38,7 +38,14 @@
         
         PFQuery *officeQuery = [PFQuery queryWithClassName:@"Office"];
         [officeQuery whereKey:@"election" equalTo:self.currentElection];
-        self.currentElection.offices = [officeQuery findObjects];
+        NSArray *unsortedOffices = [officeQuery findObjects];
+        NSArray *sortedOffices = [unsortedOffices sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(Office*)a order];
+            NSNumber *second = [(Office*)b order];
+            return [first compare:second];
+        }];
+        
+        self.currentElection.offices = sortedOffices;
         
         PFQuery *candidateQuery = [PFQuery queryWithClassName:@"Candidate"];
         [candidateQuery whereKey:@"election" equalTo:self.currentElection];
