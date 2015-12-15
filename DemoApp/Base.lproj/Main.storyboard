@@ -182,7 +182,7 @@
                         <outlet property="electionIdField" destination="Pqb-0R-gez" id="BI0-Zf-1H8"/>
                         <outlet property="invalidElectionMessage" destination="UUh-jd-ee6" id="zG6-r2-viR"/>
                         <outlet property="startVotingButton" destination="rq8-hD-WPl" id="z3r-ui-0zY"/>
-                        <segue destination="FLb-7m-eBY" kind="presentation" identifier="showTicketView" id="ywm-pA-OC2"/>
+                        <segue destination="FLb-7m-eBY" kind="presentation" identifier="showInstructions" id="ywm-pA-OC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -199,12 +199,301 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JkB-EG-rMQ" kind="relationship" relationship="rootViewController" id="vz1-U0-GwM"/>
+                        <segue destination="U21-AM-1cB" kind="relationship" relationship="rootViewController" id="yyT-el-PhV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyX-Ws-oKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="608.25" y="-388.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MbC-VD-1E8">
+            <objects>
+                <viewController id="U21-AM-1cB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dk6-Je-pP8"/>
+                        <viewControllerLayoutGuide type="bottom" id="E9B-iF-6uG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mkl-qR-zwf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoftLight" translatesAutoresizingMaskIntoConstraints="NO" id="l6x-pV-jzW">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SVLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-eP-bZm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="cf0-JS-gGg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cf0-JS-gGg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="cf0-JS-gGg"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At each office's voting screen, candidate names and party affiliation will be listed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVI-Fj-4G7">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="454" id="Obv-N4-poI">
+                                        <variation key="widthClass=regular" constant="632"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="-1" height="2"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Obv-N4-poI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Obv-N4-poI"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To select a candidate, simply click on the candidate's box." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBG-B7-MFo">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="-1" height="2"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s69-g8-kOx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOJ-xb-ICz">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="-1" height="2"/>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="8" y="2" width="188" height="45"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDZ-An-uSS">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="-1" height="2"/>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="8" y="87" width="188" height="45"/>
+                                        </variation>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgI-aL-8YJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. First Last [Party]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-PP-zHv">
+                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="16" width="186" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YIM-wn-E90">
+                                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                <animations/>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="331" y="11" width="51" height="31"/>
+                                                </variation>
+                                            </switch>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="FL2-PP-zHv"/>
+                                                <exclude reference="YIM-wn-E90"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="265" y="83" width="388" height="54"/>
+                                            <mask key="subviews">
+                                                <include reference="FL2-PP-zHv"/>
+                                                <include reference="YIM-wn-E90"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dnc-tg-id0">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. First Last [Party]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkR-5T-azJ">
+                                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="17" width="186" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-m2-qWK">
+                                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                <animations/>
+                                                <variation key="widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="331" y="12" width="51" height="31"/>
+                                                </variation>
+                                            </switch>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="YkR-5T-azJ"/>
+                                                <exclude reference="EPJ-m2-qWK"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="265" y="-3" width="388" height="56"/>
+                                            <mask key="subviews">
+                                                <include reference="YkR-5T-azJ"/>
+                                                <include reference="EPJ-m2-qWK"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="lOJ-xb-ICz"/>
+                                        <exclude reference="EDZ-An-uSS"/>
+                                        <exclude reference="IgI-aL-8YJ"/>
+                                        <exclude reference="Dnc-tg-id0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="lOJ-xb-ICz"/>
+                                        <include reference="EDZ-An-uSS"/>
+                                        <include reference="IgI-aL-8YJ"/>
+                                        <include reference="Dnc-tg-id0"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s69-g8-kOx" firstAttribute="top" secondItem="mkl-qR-zwf" secondAttribute="top" constant="345" id="1WG-pv-JOk">
+                                <variation key="widthClass=regular" constant="359"/>
+                            </constraint>
+                            <constraint firstItem="VVI-Fj-4G7" firstAttribute="leading" secondItem="FBG-B7-MFo" secondAttribute="leading" id="41Z-5j-8RP"/>
+                            <constraint firstItem="s69-g8-kOx" firstAttribute="top" secondItem="FBG-B7-MFo" secondAttribute="bottom" constant="17.5" id="6lF-xf-SOw">
+                                <variation key="widthClass=regular" constant="31"/>
+                            </constraint>
+                            <constraint firstItem="s69-g8-kOx" firstAttribute="centerX" secondItem="mkl-qR-zwf" secondAttribute="centerX" id="6os-gD-2Nc">
+                                <variation key="widthClass=regular" constant="88"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="l6x-pV-jzW" secondAttribute="trailing" id="Dnv-0W-6tj"/>
+                            <constraint firstItem="l6x-pV-jzW" firstAttribute="top" secondItem="mkl-qR-zwf" secondAttribute="top" id="Eg8-SB-T30"/>
+                            <constraint firstItem="VVI-Fj-4G7" firstAttribute="centerX" secondItem="VrB-eP-bZm" secondAttribute="centerX" id="GDs-y1-euW"/>
+                            <constraint firstItem="FBG-B7-MFo" firstAttribute="top" secondItem="VrB-eP-bZm" secondAttribute="bottom" constant="98" id="TZX-KD-ofc">
+                                <variation key="widthClass=regular" constant="134"/>
+                            </constraint>
+                            <constraint firstItem="l6x-pV-jzW" firstAttribute="bottom" secondItem="E9B-iF-6uG" secondAttribute="top" id="WM2-7Q-Dhv"/>
+                            <constraint firstItem="s69-g8-kOx" firstAttribute="leading" secondItem="mkl-qR-zwf" secondAttribute="leadingMargin" constant="39" id="aKj-hk-Lv6">
+                                <variation key="widthClass=regular" constant="127"/>
+                            </constraint>
+                            <constraint firstItem="VrB-eP-bZm" firstAttribute="top" secondItem="dk6-Je-pP8" secondAttribute="bottom" constant="98" id="cDa-tT-IMY">
+                                <variation key="widthClass=regular" constant="31"/>
+                            </constraint>
+                            <constraint firstItem="l6x-pV-jzW" firstAttribute="leading" secondItem="mkl-qR-zwf" secondAttribute="leading" id="qbz-Xc-lsv"/>
+                            <constraint firstItem="E9B-iF-6uG" firstAttribute="top" secondItem="s69-g8-kOx" secondAttribute="bottom" constant="110" id="swR-ol-x6G">
+                                <variation key="widthClass=regular" constant="96"/>
+                            </constraint>
+                            <constraint firstItem="VVI-Fj-4G7" firstAttribute="centerX" secondItem="l6x-pV-jzW" secondAttribute="centerX" id="tbe-h4-wfs"/>
+                            <constraint firstItem="VVI-Fj-4G7" firstAttribute="trailing" secondItem="FBG-B7-MFo" secondAttribute="trailing" id="xG5-gK-fcK"/>
+                            <constraint firstItem="VVI-Fj-4G7" firstAttribute="top" secondItem="VrB-eP-bZm" secondAttribute="bottom" constant="5" id="zVW-3D-eyb">
+                                <variation key="widthClass=regular" constant="35"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="l6x-pV-jzW"/>
+                                <exclude reference="VrB-eP-bZm"/>
+                                <exclude reference="VVI-Fj-4G7"/>
+                                <exclude reference="FBG-B7-MFo"/>
+                                <exclude reference="s69-g8-kOx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Dnv-0W-6tj"/>
+                                <exclude reference="Eg8-SB-T30"/>
+                                <exclude reference="WM2-7Q-Dhv"/>
+                                <exclude reference="qbz-Xc-lsv"/>
+                                <exclude reference="41Z-5j-8RP"/>
+                                <exclude reference="GDs-y1-euW"/>
+                                <exclude reference="tbe-h4-wfs"/>
+                                <exclude reference="xG5-gK-fcK"/>
+                                <exclude reference="zVW-3D-eyb"/>
+                                <exclude reference="TZX-KD-ofc"/>
+                                <exclude reference="cDa-tT-IMY"/>
+                                <exclude reference="1WG-pv-JOk"/>
+                                <exclude reference="6lF-xf-SOw"/>
+                                <exclude reference="6os-gD-2Nc"/>
+                                <exclude reference="aKj-hk-Lv6"/>
+                                <exclude reference="swR-ol-x6G"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="l6x-pV-jzW"/>
+                                <include reference="VrB-eP-bZm"/>
+                                <include reference="VVI-Fj-4G7"/>
+                                <include reference="FBG-B7-MFo"/>
+                                <include reference="s69-g8-kOx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Dnv-0W-6tj"/>
+                                <include reference="Eg8-SB-T30"/>
+                                <include reference="WM2-7Q-Dhv"/>
+                                <include reference="qbz-Xc-lsv"/>
+                                <include reference="41Z-5j-8RP"/>
+                                <include reference="GDs-y1-euW"/>
+                                <include reference="tbe-h4-wfs"/>
+                                <include reference="xG5-gK-fcK"/>
+                                <include reference="zVW-3D-eyb"/>
+                                <include reference="TZX-KD-ofc"/>
+                                <include reference="cDa-tT-IMY"/>
+                                <exclude reference="1WG-pv-JOk"/>
+                                <include reference="6lF-xf-SOw"/>
+                                <include reference="6os-gD-2Nc"/>
+                                <include reference="aKj-hk-Lv6"/>
+                                <include reference="swR-ol-x6G"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Hx-Si-fA9"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="JkB-EG-rMQ" kind="show" identifier="showTicketView" id="R0a-gB-pog"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgh-M8-1vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.25" y="336"/>
         </scene>
         <!--Vote Ticket View Controller-->
         <scene sceneID="Zia-Ci-NHN">
@@ -558,7 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKF-xm-RQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="336"/>
+            <point key="canvasLocation" x="1768.5" y="336"/>
         </scene>
     </scenes>
     <resources>

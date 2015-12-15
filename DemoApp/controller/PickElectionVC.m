@@ -29,7 +29,7 @@
             self.invalidElectionMessage.hidden = NO;
         }else{
             self.invalidElectionMessage.hidden = YES;
-            [self performSegueWithIdentifier:@"showTicketView" sender:self];
+            [self performSegueWithIdentifier:@"showInstructions" sender:self];
         }
     }];
 }

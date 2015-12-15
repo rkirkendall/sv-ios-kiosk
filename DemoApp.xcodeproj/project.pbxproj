@@ -39,6 +39,7 @@
 		E9708D1C1C1D1C1B00433013 /* Candidate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D1B1C1D1C1B00433013 /* Candidate.m */; };
 		E9708D231C1D1D1700433013 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D221C1D1D1700433013 /* Party.m */; };
 		E9708D271C1D1DCA00433013 /* Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D261C1D1DCA00433013 /* Kiosk.m */; };
+		E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3021A1C1FB9C50058528D /* InstructionViewController.m */; };
 		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
 		E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B421C13F005001B387C /* Parse.framework */; };
 		E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */; };
@@ -119,6 +120,8 @@
 		E9708D221C1D1D1700433013 /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Party.m; path = model/Party.m; sourceTree = "<group>"; };
 		E9708D251C1D1DCA00433013 /* Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Kiosk.h; path = model/Kiosk.h; sourceTree = "<group>"; };
 		E9708D261C1D1DCA00433013 /* Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Kiosk.m; path = model/Kiosk.m; sourceTree = "<group>"; };
+		E9D302191C1FB9C50058528D /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionViewController.h; path = controller/InstructionViewController.h; sourceTree = "<group>"; };
+		E9D3021A1C1FB9C50058528D /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionViewController.m; path = controller/InstructionViewController.m; sourceTree = "<group>"; };
 		E9EC9B411C13F005001B387C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E9EC9B421C13F005001B387C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 		E933EA9C1C1CAB7000D899BF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9D302181C1FB8F90058528D /* Instruction VC */,
 				E933EAAB1C1CBF5E00D899BF /* Vote Ticket */,
 				E933EA991C1CAB4300D899BF /* App Delegate */,
 				E933EA9A1C1CAB4E00D899BF /* Pick Election */,
@@ -377,6 +381,15 @@
 				E9708D261C1D1DCA00433013 /* Kiosk.m */,
 			);
 			name = Kiosk;
+			sourceTree = "<group>";
+		};
+		E9D302181C1FB8F90058528D /* Instruction VC */ = {
+			isa = PBXGroup;
+			children = (
+				E9D302191C1FB9C50058528D /* InstructionViewController.h */,
+				E9D3021A1C1FB9C50058528D /* InstructionViewController.m */,
+			);
+			name = "Instruction VC";
 			sourceTree = "<group>";
 		};
 		E9EC9B401C13EFE0001B387C /* Frameworks */ = {
@@ -582,6 +595,7 @@
 				E9708D181C1D1B2900433013 /* Office.m in Sources */,
 				E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */,
 				E933EAA71C1CADE400D899BF /* APIKey.m in Sources */,
+				E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */,
 				E9EC9B591C13F801001B387C /* Election.m in Sources */,
 				E9708D061C1CC45D00433013 /* BButton.m in Sources */,
 				E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */,
