@@ -44,8 +44,13 @@
     [self updateVotingForLabel];
 }
 
-- (void) updateRemainingVotesLabel{
+- (NSInteger) numberOfVotesRemaining{
     NSInteger remaining = self.selectedOffice.limit.integerValue - self.selectedOffice.votesCast.integerValue;
+    return remaining;
+}
+
+- (void) updateRemainingVotesLabel{
+    NSInteger remaining = [self numberOfVotesRemaining];
     NSString *string = [NSString stringWithFormat:@"%@ votes remaining.",[NSNumber numberWithInteger:remaining]];
     self.remainingVotesLabel.text = string;
     
@@ -104,10 +109,15 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger rem = [self numberOfVotesRemaining];
     CandidateTableViewCell *cell = (CandidateTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    BOOL s = cell.selected;
-    [cell setSelected:s];
-    [self drawLabels];
+    if (rem > 0) {
+        BOOL s = cell.selected;
+        [cell setSelected:s];
+        [self drawLabels];
+    }else{
+        [cell setSelected:NO];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{

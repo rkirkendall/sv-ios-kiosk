@@ -33,5 +33,7 @@
 }
 
 - (IBAction)continueTapped:(id)sender {
+    
+    [self performSegueWithIdentifier:@"showTicketView" sender:self];
 }
 @end
