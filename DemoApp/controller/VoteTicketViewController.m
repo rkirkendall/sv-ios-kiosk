@@ -146,6 +146,7 @@
         [self goToNextTicket];
     }else{
         NSLog(@"Let user verify the submission");
+        [self performSegueWithIdentifier:@"showVoteReview" sender:self];
     }
 }
 @end

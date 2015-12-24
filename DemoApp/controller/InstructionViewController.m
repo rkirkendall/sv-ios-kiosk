@@ -25,6 +25,7 @@
     self.secondCellView.layer.cornerRadius = 8;
     self.secondCellView.layer.masksToBounds = true;
     self.secondCellView.backgroundColor = [SVUtil voteSelectionGreen];
+    self.title = @"Instructions";
 }
 
 - (void)didReceiveMemoryWarning {
