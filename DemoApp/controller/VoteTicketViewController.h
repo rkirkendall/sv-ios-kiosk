@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BButton.h"
-@interface VoteTicketViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+#import "CandidateTableViewCell.h"
+@interface VoteTicketViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, CandidateSelection>
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *remainingVotesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chosenVotesLabel;
@@ -17,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, readwrite) NSInteger officeIndex;
+
+- (BOOL) canSelectCandidate;
+- (void) drawLabels;
 
 - (IBAction)continueTapped:(id)sender;
 

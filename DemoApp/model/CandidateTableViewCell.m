@@ -15,24 +15,33 @@
 }
 
 - (IBAction)switchToggled:(id)sender {
-    [self setSelected:self.pickedSwitch.isOn];
+    
+    if ([self.delegate canSelectCandidate]) {
+        [self setSelectionState:self.pickedSwitch.isOn];        
+        [self.delegate drawLabels];
+    }else{
+        [self setSelectionState: NO];
+        [self.delegate drawLabels];
+    }
+    
 }
 
--(void)setSelected:(BOOL)selected{
-    [super setSelected:selected];
+- (void)setSelectionState:(BOOL)selected{
     if (selected) {
         self.contentView.backgroundColor = [SVUtil voteSelectionGreen];
     }else{
         self.backgroundColor = [UIColor whiteColor];
+        self.contentView.backgroundColor = [UIColor whiteColor];
     }
     
     self.candidate.votedFor = selected;
-    [self.pickedSwitch setOn: self.candidate.votedFor];
+    [self.pickedSwitch setOn: self.candidate.votedFor animated:YES];
 }
+
 
 -(void)setCandidate:(Candidate *)candidate{
     _candidate = candidate;
     self.titleLabel.text = [NSString stringWithFormat:@"%@. %@ %@ [%@]",[NSNumber numberWithInteger:self.index+1] ,self.candidate.firstName, self.candidate.lastName,self.candidate.party.initials];
-    [self setSelected:_candidate.votedFor];
+    [self setSelectionState:_candidate.votedFor];
 }
 @end

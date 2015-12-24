@@ -7,7 +7,6 @@
 //
 
 #import "VoteTicketViewController.h"
-#import "CandidateTableViewCell.h"
 #import "SVUtil.h"
 #import "ElectionManager.h"
 #import <QuartzCore/QuartzCore.h>
@@ -25,6 +24,8 @@
     [self.continueButton setColor:[SVUtil buttonGreen]];
     [self.continueButton.titleLabel setFont:[UIFont systemFontOfSize:20 weight:0.5]];
     self.title = [NSString stringWithFormat:@"Voting in \"%@\"",[[ElectionManager Manager] currentElection].name];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,6 +33,8 @@
     if (!self.officeIndex) {
         self.officeIndex = 0;
     }
+    
+    NSLog(@"ix: %d",self.officeIndex);
     
     self.selectedOffice = [[[ElectionManager Manager]currentElection]offices][self.officeIndex];
     self.dataSource = [NSArray arrayWithArray:self.selectedOffice.candidates];
@@ -101,6 +104,7 @@
     CandidateTableViewCell *candidateCell = (CandidateTableViewCell *)cell;
     candidateCell.index = indexPath.section;
     candidateCell.candidate = self.dataSource[indexPath.section];
+    candidateCell.delegate = self;
     candidateCell.layer.cornerRadius = 8;
     candidateCell.layer.masksToBounds = true;
     
@@ -109,25 +113,39 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger rem = [self numberOfVotesRemaining];
     CandidateTableViewCell *cell = (CandidateTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    if (rem > 0) {
-        BOOL s = cell.selected;
-        [cell setSelected:s];
-        [self drawLabels];
+    BOOL isVoteAttempt = !cell.candidate.votedFor;
+    if (isVoteAttempt && [self canSelectCandidate]) {
+        [cell setSelectionState:YES];
     }else{
-        [cell setSelected:NO];
+        [cell setSelectionState:NO];
+    }
+    [self drawLabels];
+}
+
+- (BOOL)canSelectCandidate{
+    NSInteger rem = [self numberOfVotesRemaining];
+    if (rem > 0) {
+        return YES;
+    }else{
+        return NO;
     }
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    CandidateTableViewCell *cell = (CandidateTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-    BOOL s = cell.selected;
-    [cell setSelected:s];
-    [self drawLabels];
+- (void) goToNextTicket{
+    VoteTicketViewController *nextTicket = [self.storyboard instantiateViewControllerWithIdentifier:@"VoteTicketViewController"];
+    nextTicket.officeIndex = self.officeIndex+1;
+    [self.navigationController pushViewController: nextTicket animated:YES];
 }
 
 - (IBAction)continueTapped:(id)sender {
     
+    // Is there another office?
+    NSInteger officeCount = [[[[ElectionManager Manager] currentElection] offices] count];
+    if (officeCount > self.officeIndex+1) {
+        [self goToNextTicket];
+    }else{
+        NSLog(@"Let user verify the submission");
+    }
 }
 @end

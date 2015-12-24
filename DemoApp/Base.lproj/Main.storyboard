@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,11 +21,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PickElection" translatesAutoresizingMaskIntoConstraints="NO" id="wDY-j1-xnL">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-0R-gez">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="KRh-sD-lnz"/>
                                 </constraints>
@@ -44,7 +42,6 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your election ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="So6-fU-Uo6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.36862745098039218" green="0.65490196078431373" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +50,6 @@
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid election ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUh-jd-ee6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="234" id="8Fr-YE-Ort"/>
                                 </constraints>
@@ -73,7 +69,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-hD-WPl" customClass="BButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="143" id="FST-Ty-lYD">
                                         <variation key="widthClass=regular" constant="126"/>
@@ -103,7 +98,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wDY-j1-xnL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9Bn-nm-fjg"/>
@@ -196,7 +190,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tS3-5F-vvy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="U21-AM-1cB" kind="relationship" relationship="rootViewController" id="yyT-el-PhV"/>
@@ -220,11 +213,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoftLight" translatesAutoresizingMaskIntoConstraints="NO" id="l6x-pV-jzW">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SVLogo" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-eP-bZm">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="cf0-JS-gGg"/>
                                 </constraints>
@@ -241,7 +232,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At each office's voting screen, candidate names and party affiliation will be listed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVI-Fj-4G7">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="454" id="Obv-N4-poI">
                                         <variation key="widthClass=regular" constant="632"/>
@@ -265,7 +255,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To select a candidate, simply click on the candidate's box." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBG-B7-MFo">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -277,7 +266,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOJ-xb-ICz">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -289,7 +277,6 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDZ-An-uSS">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -304,7 +291,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. First Last [Party]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-PP-zHv">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -314,13 +300,11 @@
                                             </label>
                                             <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIM-wn-E90">
                                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                                <animations/>
                                                 <variation key="widthClass=regular" fixedFrame="YES">
                                                     <rect key="frame" x="331" y="11" width="51" height="31"/>
                                                 </variation>
                                             </switch>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="default">
                                             <mask key="subviews">
@@ -341,7 +325,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. First Last [Party]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkR-5T-azJ">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -351,13 +334,11 @@
                                             </label>
                                             <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-m2-qWK">
                                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                                <animations/>
                                                 <variation key="widthClass=regular" fixedFrame="YES">
                                                     <rect key="frame" x="331" y="12" width="51" height="31"/>
                                                 </variation>
                                             </switch>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="default">
                                             <mask key="subviews">
@@ -374,7 +355,6 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="cvk-Uq-O21"/>
@@ -404,7 +384,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUl-FA-WLa" customClass="BButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="clM-PY-lrn"/>
                                     <constraint firstAttribute="height" constant="52" id="kLj-GJ-vPK"/>
@@ -428,7 +407,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="s69-g8-kOx" firstAttribute="top" secondItem="mkl-qR-zwf" secondAttribute="top" constant="345" id="1WG-pv-JOk">
@@ -484,26 +462,26 @@
                                 <exclude reference="EUl-FA-WLa"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Dnv-0W-6tj"/>
-                                <exclude reference="Eg8-SB-T30"/>
-                                <exclude reference="WM2-7Q-Dhv"/>
-                                <exclude reference="qbz-Xc-lsv"/>
-                                <exclude reference="41Z-5j-8RP"/>
-                                <exclude reference="GDs-y1-euW"/>
-                                <exclude reference="tbe-h4-wfs"/>
-                                <exclude reference="xG5-gK-fcK"/>
-                                <exclude reference="zVW-3D-eyb"/>
-                                <exclude reference="TZX-KD-ofc"/>
-                                <exclude reference="cDa-tT-IMY"/>
-                                <exclude reference="1WG-pv-JOk"/>
-                                <exclude reference="6lF-xf-SOw"/>
-                                <exclude reference="6os-gD-2Nc"/>
-                                <exclude reference="aKj-hk-Lv6"/>
                                 <exclude reference="gU6-gH-Ef7"/>
                                 <exclude reference="swR-ol-x6G"/>
                                 <exclude reference="XDC-cB-pCT"/>
                                 <exclude reference="dOz-Q9-XlQ"/>
                                 <exclude reference="iT2-PZ-1kl"/>
+                                <exclude reference="TZX-KD-ofc"/>
+                                <exclude reference="41Z-5j-8RP"/>
+                                <exclude reference="GDs-y1-euW"/>
+                                <exclude reference="tbe-h4-wfs"/>
+                                <exclude reference="xG5-gK-fcK"/>
+                                <exclude reference="zVW-3D-eyb"/>
+                                <exclude reference="cDa-tT-IMY"/>
+                                <exclude reference="Dnv-0W-6tj"/>
+                                <exclude reference="Eg8-SB-T30"/>
+                                <exclude reference="WM2-7Q-Dhv"/>
+                                <exclude reference="qbz-Xc-lsv"/>
+                                <exclude reference="1WG-pv-JOk"/>
+                                <exclude reference="6lF-xf-SOw"/>
+                                <exclude reference="6os-gD-2Nc"/>
+                                <exclude reference="aKj-hk-Lv6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -516,26 +494,26 @@
                                 <include reference="EUl-FA-WLa"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Dnv-0W-6tj"/>
-                                <include reference="Eg8-SB-T30"/>
-                                <include reference="WM2-7Q-Dhv"/>
-                                <include reference="qbz-Xc-lsv"/>
-                                <include reference="41Z-5j-8RP"/>
-                                <include reference="GDs-y1-euW"/>
-                                <include reference="tbe-h4-wfs"/>
-                                <include reference="xG5-gK-fcK"/>
-                                <include reference="zVW-3D-eyb"/>
-                                <include reference="TZX-KD-ofc"/>
-                                <include reference="cDa-tT-IMY"/>
-                                <exclude reference="1WG-pv-JOk"/>
-                                <include reference="6lF-xf-SOw"/>
-                                <include reference="6os-gD-2Nc"/>
-                                <include reference="aKj-hk-Lv6"/>
                                 <exclude reference="gU6-gH-Ef7"/>
                                 <exclude reference="swR-ol-x6G"/>
                                 <include reference="XDC-cB-pCT"/>
                                 <exclude reference="dOz-Q9-XlQ"/>
                                 <include reference="iT2-PZ-1kl"/>
+                                <include reference="TZX-KD-ofc"/>
+                                <include reference="41Z-5j-8RP"/>
+                                <include reference="GDs-y1-euW"/>
+                                <include reference="tbe-h4-wfs"/>
+                                <include reference="xG5-gK-fcK"/>
+                                <include reference="zVW-3D-eyb"/>
+                                <include reference="cDa-tT-IMY"/>
+                                <include reference="Dnv-0W-6tj"/>
+                                <include reference="Eg8-SB-T30"/>
+                                <include reference="WM2-7Q-Dhv"/>
+                                <include reference="qbz-Xc-lsv"/>
+                                <exclude reference="1WG-pv-JOk"/>
+                                <include reference="6lF-xf-SOw"/>
+                                <include reference="6os-gD-2Nc"/>
+                                <include reference="aKj-hk-Lv6"/>
                             </mask>
                         </variation>
                     </view>
@@ -555,7 +533,7 @@
         <!--Vote Ticket View Controller-->
         <scene sceneID="Zia-Ci-NHN">
             <objects>
-                <viewController id="JkB-EG-rMQ" customClass="VoteTicketViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoteTicketViewController" id="JkB-EG-rMQ" customClass="VoteTicketViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cSA-45-noc"/>
                         <viewControllerLayoutGuide type="bottom" id="CFE-To-0w3"/>
@@ -566,11 +544,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoftLight" translatesAutoresizingMaskIntoConstraints="NO" id="b0R-VL-whQ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voting for: Governors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWL-Py-upQ">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="430" id="dS4-cm-Mmh"/>
                                     <constraint firstAttribute="height" constant="60" id="wUU-7K-b4c"/>
@@ -598,11 +574,9 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SVLogo" translatesAutoresizingMaskIntoConstraints="NO" id="S2I-gZ-uxX">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <animations/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have chosen 3 out of 16 votes." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i8-wS-bLk">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="fc8-el-Xo1"/>
                                             <constraint firstAttribute="width" constant="213" id="gEk-BC-FjM">
@@ -629,7 +603,6 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 votes remaining." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-s1-r3U">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="254" id="ElF-ic-1Aa">
                                                 <variation key="widthClass=regular" constant="309"/>
@@ -658,7 +631,6 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlY-te-jIw" customClass="BButton">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="3md-NM-Jao">
                                                 <variation key="widthClass=regular" constant="53"/>
@@ -686,7 +658,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2i8-wS-bLk" firstAttribute="top" secondItem="S2I-gZ-uxX" secondAttribute="bottom" constant="29" id="7KF-7U-VIJ"/>
@@ -741,13 +712,12 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-dY-z2R">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-dY-z2R">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="azM-lg-gpF" customClass="CandidateTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="azM-lg-gpF" customClass="CandidateTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="azM-lg-gpF" id="xRP-FF-8f6">
@@ -756,20 +726,17 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Bernie Sanders [DEM]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi4-AR-uBX">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvQ-ux-opx">
                                                     <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                                    <animations/>
                                                     <connections>
                                                         <action selector="switchToggled:" destination="azM-lg-gpF" eventType="valueChanged" id="t6r-8c-5SO"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="VvQ-ux-opx" firstAttribute="leading" secondItem="wi4-AR-uBX" secondAttribute="trailing" constant="61" id="1WW-K7-J4A"/>
                                                 <constraint firstItem="wi4-AR-uBX" firstAttribute="leading" secondItem="xRP-FF-8f6" secondAttribute="leadingMargin" id="7LT-Vs-Pl3"/>
@@ -809,7 +776,6 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="pickedSwitch" destination="VvQ-ux-opx" id="9K3-rZ-Z9I"/>
                                             <outlet property="titleLabel" destination="wi4-AR-uBX" id="yPN-qq-hXK"/>
@@ -822,7 +788,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CFE-To-0w3" firstAttribute="top" secondItem="xnB-7n-lGV" secondAttribute="bottom" id="0y5-KH-oD8"/>
