@@ -16,7 +16,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-DemoApp/model/APIKey.m
+Kiosk/model/APIKey.m
 
 # CocoaPods
 #
