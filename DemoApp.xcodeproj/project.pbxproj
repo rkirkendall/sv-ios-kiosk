@@ -19,7 +19,6 @@
 		E91325EE1C13FD3700F8FD4F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325ED1C13FD3700F8FD4F /* libsqlite3.tbd */; };
 		E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EA9F1C1CAC8000D899BF /* UserManager.m */; };
 		E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA21C1CACBC00D899BF /* ElectionManager.m */; };
-		E933EAA71C1CADE400D899BF /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA61C1CADE400D899BF /* APIKey.m */; };
 		E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA91C1CB27900D899BF /* PickElectionVC.m */; };
 		E96FD5F41C13DD1400EED512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F31C13DD1400EED512 /* main.m */; };
 		E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E96FD5F61C13DD1400EED512 /* AppDelegate.m */; };
@@ -42,6 +41,7 @@
 		E99E70301C2B996600150557 /* VoteReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E702F1C2B996600150557 /* VoteReviewVC.m */; };
 		E99E70341C2EF93800150557 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E70331C2EF93800150557 /* ReviewCell.m */; };
 		E99E70381C2F02DB00150557 /* ReviewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E70371C2F02DB00150557 /* ReviewHeaderCell.m */; };
+		E9AE8EC71C2F1A8E00D853F6 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AE8EC61C2F1A8E00D853F6 /* APIKey.m */; };
 		E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3021A1C1FB9C50058528D /* InstructionViewController.m */; };
 		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
 		E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B421C13F005001B387C /* Parse.framework */; };
@@ -85,7 +85,6 @@
 		E933EAA11C1CACBC00D899BF /* ElectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElectionManager.h; path = model/ElectionManager.h; sourceTree = "<group>"; };
 		E933EAA21C1CACBC00D899BF /* ElectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElectionManager.m; path = model/ElectionManager.m; sourceTree = "<group>"; };
 		E933EAA51C1CADE400D899BF /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIKey.h; path = model/APIKey.h; sourceTree = "<group>"; };
-		E933EAA61C1CADE400D899BF /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIKey.m; path = model/APIKey.m; sourceTree = "<group>"; };
 		E933EAA81C1CB27900D899BF /* PickElectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickElectionVC.h; path = controller/PickElectionVC.h; sourceTree = "<group>"; };
 		E933EAA91C1CB27900D899BF /* PickElectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickElectionVC.m; path = controller/PickElectionVC.m; sourceTree = "<group>"; };
 		E96FD5EF1C13DD1400EED512 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +128,7 @@
 		E99E70331C2EF93800150557 /* ReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewCell.m; path = model/ReviewCell.m; sourceTree = "<group>"; };
 		E99E70361C2F02DB00150557 /* ReviewHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewHeaderCell.h; sourceTree = "<group>"; };
 		E99E70371C2F02DB00150557 /* ReviewHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewHeaderCell.m; sourceTree = "<group>"; };
+		E9AE8EC61C2F1A8E00D853F6 /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIKey.m; path = model/APIKey.m; sourceTree = "<group>"; };
 		E9D302191C1FB9C50058528D /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionViewController.h; path = controller/InstructionViewController.h; sourceTree = "<group>"; };
 		E9D3021A1C1FB9C50058528D /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionViewController.m; path = controller/InstructionViewController.m; sourceTree = "<group>"; };
 		E9EC9B411C13F005001B387C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				E933EAA51C1CADE400D899BF /* APIKey.h */,
-				E933EAA61C1CADE400D899BF /* APIKey.m */,
+				E9AE8EC61C2F1A8E00D853F6 /* APIKey.m */,
 			);
 			name = APIKey;
 			sourceTree = "<group>";
@@ -631,12 +631,12 @@
 				E96FD5F71C13DD1400EED512 /* AppDelegate.m in Sources */,
 				E9708D1C1C1D1C1B00433013 /* Candidate.m in Sources */,
 				E9708D0D1C1CEA6300433013 /* CandidateTableViewCell.m in Sources */,
+				E9AE8EC71C2F1A8E00D853F6 /* APIKey.m in Sources */,
 				E99E70381C2F02DB00150557 /* ReviewHeaderCell.m in Sources */,
 				E9708D081C1CC45D00433013 /* UIColor+BButton.m in Sources */,
 				E9708D181C1D1B2900433013 /* Office.m in Sources */,
 				E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */,
 				E99E70301C2B996600150557 /* VoteReviewVC.m in Sources */,
-				E933EAA71C1CADE400D899BF /* APIKey.m in Sources */,
 				E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */,
 				E9EC9B591C13F801001B387C /* Election.m in Sources */,
 				E9708D061C1CC45D00433013 /* BButton.m in Sources */,
