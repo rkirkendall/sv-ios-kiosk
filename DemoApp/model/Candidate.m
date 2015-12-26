@@ -28,4 +28,8 @@
     [self registerSubclass];
 }
 
+-(NSString *)displayLabel{
+    return [NSString stringWithFormat:@"%@ %@ [%@]" ,self.firstName, self.lastName,self.party.initials];
+}
+
 @end

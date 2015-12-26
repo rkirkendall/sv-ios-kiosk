@@ -35,6 +35,16 @@
     return [NSNumber numberWithInteger:toReturn];
 }
 
+- (NSArray *)votedCandidates{
+    NSMutableArray *votes = [NSMutableArray array];
+    for (Candidate *can in [self candidates]) {
+        if (can.votedFor) {
+            [votes addObject:can];
+        }
+    }
+    return votes;
+}
+
 - (NSArray *)candidates{
     NSArray *all = [[ElectionManager Manager] currentElection].candidates;
     NSMutableArray *forOffice = [NSMutableArray array];

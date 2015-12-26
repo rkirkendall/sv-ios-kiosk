@@ -19,4 +19,6 @@
 
 - (NSNumber *)votesCast;
 
+- (NSArray *)votedCandidates;
+
 @end

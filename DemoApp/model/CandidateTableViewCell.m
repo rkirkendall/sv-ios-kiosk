@@ -41,7 +41,7 @@
 
 -(void)setCandidate:(Candidate *)candidate{
     _candidate = candidate;
-    self.titleLabel.text = [NSString stringWithFormat:@"%@. %@ %@ [%@]",[NSNumber numberWithInteger:self.index+1] ,self.candidate.firstName, self.candidate.lastName,self.candidate.party.initials];
+    self.titleLabel.text = [NSString stringWithFormat:@"%@. %@",[NSNumber numberWithInteger:self.index+1],[candidate displayLabel]];
     [self setSelectionState:_candidate.votedFor];
 }
 @end

@@ -20,4 +20,6 @@
 
 @property (nonatomic, readwrite) BOOL votedFor;
 
+- (NSString *)displayLabel;
+
 @end

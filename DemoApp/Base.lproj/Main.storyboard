@@ -900,14 +900,14 @@
                                 <size key="shadowOffset" width="-1" height="2"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="MZE-sf-1ht"/>
                                         <exclude reference="5pH-hj-pqJ"/>
+                                        <exclude reference="MZE-sf-1ht"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="MZE-sf-1ht"/>
                                         <include reference="5pH-hj-pqJ"/>
+                                        <include reference="MZE-sf-1ht"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -934,14 +934,14 @@
                                         <size key="shadowOffset" width="-1" height="2"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="lpR-yU-QG6"/>
                                                 <exclude reference="7lg-Bp-4Eq"/>
+                                                <exclude reference="lpR-yU-QG6"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=regular">
                                             <mask key="constraints">
-                                                <include reference="lpR-yU-QG6"/>
                                                 <include reference="7lg-Bp-4Eq"/>
+                                                <include reference="lpR-yU-QG6"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -959,8 +959,7 @@
                                                 <exclude reference="X22-Zi-RHa"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="8" y="252" width="142" height="53"/>
+                                        <variation key="widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="QUg-is-45W"/>
                                                 <include reference="X22-Zi-RHa"/>
@@ -993,12 +992,12 @@
                                         <exclude reference="2lu-zR-bxP"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="RvI-fM-Z9Y"/>
-                                        <exclude reference="hcZ-A3-wsH"/>
-                                        <exclude reference="2M7-iu-6j4"/>
-                                        <exclude reference="xQD-qX-Zws"/>
                                         <exclude reference="Bnp-t9-nJQ"/>
                                         <exclude reference="byL-DQ-EGd"/>
+                                        <exclude reference="2M7-iu-6j4"/>
+                                        <exclude reference="xQD-qX-Zws"/>
+                                        <exclude reference="RvI-fM-Z9Y"/>
+                                        <exclude reference="hcZ-A3-wsH"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=regular">
@@ -1008,12 +1007,12 @@
                                         <include reference="2lu-zR-bxP"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="RvI-fM-Z9Y"/>
-                                        <include reference="hcZ-A3-wsH"/>
-                                        <include reference="2M7-iu-6j4"/>
-                                        <include reference="xQD-qX-Zws"/>
                                         <include reference="Bnp-t9-nJQ"/>
                                         <include reference="byL-DQ-EGd"/>
+                                        <include reference="2M7-iu-6j4"/>
+                                        <include reference="xQD-qX-Zws"/>
+                                        <include reference="RvI-fM-Z9Y"/>
+                                        <include reference="hcZ-A3-wsH"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1022,7 +1021,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="xGu-Sb-m3M">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="xGu-Sb-m3M" customClass="ReviewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xGu-Sb-m3M" id="tPJ-vx-Mga">
@@ -1031,10 +1030,10 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Bernie Sanders [DEM]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITD-Lw-lrM">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                                    <color key="shadowColor" red="0.43836805548989899" green="0.43836805548989899" blue="0.43836805548989899" alpha="0.676282728" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="-1" height="2"/>
                                                 </label>
                                             </subviews>
@@ -1071,10 +1070,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="titleLabel" destination="ITD-Lw-lrM" id="9g7-ui-Ouv"/>
+                                            <outlet property="candidateLabel" destination="ITD-Lw-lrM" id="r1R-n1-cBC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="54" id="2Ab-xR-2iI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="54" id="2Ab-xR-2iI" customClass="ReviewHeaderCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ab-xR-2iI" id="KeM-tx-gnM">
@@ -1083,10 +1082,10 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Bernie Sanders [DEM]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uI5-VG-0nL">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" red="0.64484690649999998" green="0.64484690649999998" blue="0.64484690649999998" alpha="0.676282728" colorSpace="calibratedRGB"/>
+                                                    <color key="shadowColor" red="0.46630366151111113" green="0.46630366151111113" blue="0.46630366151111113" alpha="0.676282728" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="-1" height="2"/>
                                                 </label>
                                             </subviews>
@@ -1103,10 +1102,10 @@
                                                     <exclude reference="uI5-VG-0nL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="EsN-Y4-YMJ"/>
-                                                    <exclude reference="EFr-PS-XZ0"/>
-                                                    <exclude reference="D4v-zH-IOA"/>
                                                     <exclude reference="1Oq-Qz-HSc"/>
+                                                    <exclude reference="D4v-zH-IOA"/>
+                                                    <exclude reference="EFr-PS-XZ0"/>
+                                                    <exclude reference="EsN-Y4-YMJ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=regular">
@@ -1114,16 +1113,16 @@
                                                     <include reference="uI5-VG-0nL"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="EsN-Y4-YMJ"/>
-                                                    <include reference="EFr-PS-XZ0"/>
-                                                    <include reference="D4v-zH-IOA"/>
                                                     <include reference="1Oq-Qz-HSc"/>
+                                                    <include reference="D4v-zH-IOA"/>
+                                                    <include reference="EFr-PS-XZ0"/>
+                                                    <include reference="EsN-Y4-YMJ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="titleLabel" destination="uI5-VG-0nL" id="5bc-q8-g83"/>
+                                            <outlet property="officeLabel" destination="uI5-VG-0nL" id="0Jf-Od-lhB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1166,16 +1165,16 @@
                             <mask key="constraints">
                                 <exclude reference="fpx-Wu-jKG"/>
                                 <exclude reference="nNb-lg-iwu"/>
-                                <exclude reference="tir-kM-juV"/>
                                 <exclude reference="OfQ-2B-4MW"/>
-                                <exclude reference="8vP-TK-fYF"/>
-                                <exclude reference="8wj-mK-B6N"/>
-                                <exclude reference="dkx-aU-8ls"/>
-                                <exclude reference="UK1-rJ-qiS"/>
+                                <exclude reference="tir-kM-juV"/>
+                                <exclude reference="3jU-8e-2FB"/>
+                                <exclude reference="PPe-Z5-Zrs"/>
                                 <exclude reference="A3l-P6-NSz"/>
                                 <exclude reference="TbH-KM-RS7"/>
-                                <exclude reference="PPe-Z5-Zrs"/>
-                                <exclude reference="3jU-8e-2FB"/>
+                                <exclude reference="UK1-rJ-qiS"/>
+                                <exclude reference="dkx-aU-8ls"/>
+                                <exclude reference="8vP-TK-fYF"/>
+                                <exclude reference="8wj-mK-B6N"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -1188,16 +1187,16 @@
                             <mask key="constraints">
                                 <include reference="fpx-Wu-jKG"/>
                                 <include reference="nNb-lg-iwu"/>
-                                <include reference="tir-kM-juV"/>
                                 <include reference="OfQ-2B-4MW"/>
-                                <include reference="8vP-TK-fYF"/>
-                                <include reference="8wj-mK-B6N"/>
-                                <include reference="dkx-aU-8ls"/>
-                                <include reference="UK1-rJ-qiS"/>
+                                <include reference="tir-kM-juV"/>
+                                <include reference="3jU-8e-2FB"/>
+                                <include reference="PPe-Z5-Zrs"/>
                                 <include reference="A3l-P6-NSz"/>
                                 <include reference="TbH-KM-RS7"/>
-                                <include reference="PPe-Z5-Zrs"/>
-                                <include reference="3jU-8e-2FB"/>
+                                <include reference="UK1-rJ-qiS"/>
+                                <include reference="dkx-aU-8ls"/>
+                                <include reference="8vP-TK-fYF"/>
+                                <include reference="8wj-mK-B6N"/>
                             </mask>
                         </variation>
                     </view>
