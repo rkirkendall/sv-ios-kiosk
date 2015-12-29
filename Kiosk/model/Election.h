@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NSArray *offices;
 @property (nonatomic, strong) NSArray *candidates;
 
+- (void)clearVoteTicket;
+
 @end

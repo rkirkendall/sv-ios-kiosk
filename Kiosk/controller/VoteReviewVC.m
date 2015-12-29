@@ -103,15 +103,57 @@
         [vote serialize];
         count++;
     }
+    [self attemptSendVotes];
+}
+
+- (void) attemptSendVotes{
+    
+    // TODO: Block UI with toast
     
     [Blockchain CastVotesWithCompletion:^(BOOL success) {
         if (success) {
             NSLog(@"Votes cast successfully!");
+            [self voteSubmissionSuccessful];
         }else{
             NSLog(@"Votes NOT CAST!");
+            [self voteSubmissionFailed];
         }
-        
     }];
-    
 }
+
+- (void) voteSubmissionSuccessful{
+    
+    [[[ElectionManager Manager] currentElection] clearVoteTicket];
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Votes Submitted"
+                                                                   message:@"Your votes have been successfully submitted! Thank you for your participation in this election."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              // Go back to instruction view
+                                                              [self.navigationController popToRootViewControllerAnimated:YES];
+                                                              
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void) voteSubmissionFailed{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Problem"
+                                                                   message:@"Your votes have not yet been submitted. Please check your internet connection and try again."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self attemptSendVotes];
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+
+
 @end

@@ -1087,6 +1087,9 @@
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.46630366151111113" green="0.46630366151111113" blue="0.46630366151111113" alpha="0.676282728" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="-1" height="2"/>
+                                                    <variation key="widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="224" height="38"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -1211,7 +1214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkN-40-e7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2461.5" y="336"/>
+            <point key="canvasLocation" x="2478" y="336"/>
         </scene>
     </scenes>
     <resources>

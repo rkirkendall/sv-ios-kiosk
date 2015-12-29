@@ -8,6 +8,7 @@
 
 #import "Election.h"
 #import <Parse/PFObject+Subclass.h>
+#import "Candidate.h"
 @implementation Election
 
 @synthesize parties;
@@ -25,6 +26,12 @@
 + (void)load {
     [super load];
     [self registerSubclass];
+}
+
+- (void)clearVoteTicket{
+    for (Candidate *cand in self.candidates) {
+        cand.votedFor = NO;
+    }
 }
 
 @end
