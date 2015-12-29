@@ -43,7 +43,7 @@
     return operation;
 }
 
-+ (void) CastVotes{
++ (void) CastVotesWithCompletion:(void (^)(BOOL success))completion{
     NSMutableArray *votesToCast = [[[NSUserDefaults standardUserDefaults] objectForKey:kVoteStore] mutableCopy];
     NSMutableArray *toRemove = [NSMutableArray array];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -104,6 +104,12 @@
             NSLog(@"All operations in batch complete");
             NSArray *remaining = [[NSUserDefaults standardUserDefaults] objectForKey:kVoteStore];
             NSLog(@"Remaining votes: %lu",remaining.count);
+            
+            if (remaining.count == 0) {
+                completion(YES);
+            }else{
+                completion(NO);
+            }
             
         }];
         

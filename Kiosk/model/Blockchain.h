@@ -19,7 +19,7 @@
 
 + (void) CreateOrGetBTCAddressForElectionID:(NSString *)electionID withCompletion:(void (^)(NSDictionary *address))completion;
 
-+ (void) CastVotes;
++ (void) CastVotesWithCompletion:(void (^)(BOOL success))completion;
 
 + (AFHTTPRequestOperation *) SendVote:(NSDictionary *)voteDict withCompletion:(void (^)(BOOL success, NSString *toAddress))completion;
 

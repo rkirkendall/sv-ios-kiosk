@@ -104,9 +104,14 @@
         count++;
     }
     
-    [Blockchain CastVotes];
-    
-    
+    [Blockchain CastVotesWithCompletion:^(BOOL success) {
+        if (success) {
+            NSLog(@"Votes cast successfully!");
+        }else{
+            NSLog(@"Votes NOT CAST!");
+        }
+        
+    }];
     
 }
 @end
