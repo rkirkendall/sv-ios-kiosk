@@ -11,7 +11,8 @@
 #import "ElectionManager.h"
 #import "ReviewCell.h"
 #import "ReviewHeaderCell.h"
-
+#import "Vote.h"
+#import "Blockchain.h"
 @interface VoteReviewVC ()
 
 @property (nonatomic, strong) NSMutableDictionary *dataSource;
@@ -84,6 +85,28 @@
 }
 
 - (IBAction)submitButtonTapped:(id)sender {
+    
+    // Save votes
+    Election *current = [[ElectionManager Manager] currentElection];
+    NSArray *offices = [current offices];
+    NSMutableArray *votedCandidates = [NSMutableArray array];
+    
+    
+    for (Office *office in offices) {
+        [votedCandidates addObjectsFromArray:[office votedCandidates]];
+    }
+    
+    NSInteger count = 1;
+    for (Candidate *candidate in votedCandidates) {
+        Vote *vote = [[Vote alloc] initWithCandidate:candidate];
+        vote.voteid = [NSNumber numberWithInteger:count];
+        [vote serialize];
+        count++;
+    }
+    
+    [Blockchain CastVotes];
+    
+    
     
 }
 @end

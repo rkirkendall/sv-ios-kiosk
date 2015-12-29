@@ -8,6 +8,8 @@
 
 #import "InstructionViewController.h"
 #import "SVUtil.h"
+#import "Blockchain.h"
+#import "ElectionManager.h"
 @interface InstructionViewController ()
 
 @end
@@ -26,6 +28,14 @@
     self.secondCellView.layer.masksToBounds = true;
     self.secondCellView.backgroundColor = [SVUtil voteSelectionGreen];
     self.title = @"Instructions";
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSString *electionID = [[[ElectionManager Manager] currentElection] objectId];
+    [Blockchain CreateOrGetBTCAddressForElectionID:electionID withCompletion:^(NSDictionary *address) {
+        NSLog(@" got the address.");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

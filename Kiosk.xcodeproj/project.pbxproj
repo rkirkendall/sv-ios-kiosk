@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A499137ADDB9489131FF270D /* libPods-Kiosk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2A3A3407C8E6452CB0E9B4 /* libPods-Kiosk.a */; };
 		E91325DC1C13FCE800F8FD4F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325DB1C13FCE800F8FD4F /* AudioToolbox.framework */; };
 		E91325DE1C13FCF000F8FD4F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325DD1C13FCF000F8FD4F /* CFNetwork.framework */; };
 		E91325E01C13FCF700F8FD4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325DF1C13FCF700F8FD4F /* CoreGraphics.framework */; };
@@ -17,6 +18,8 @@
 		E91325EA1C13FD1E00F8FD4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325E91C13FD1E00F8FD4F /* SystemConfiguration.framework */; };
 		E91325EC1C13FD2C00F8FD4F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325EB1C13FD2C00F8FD4F /* libz.tbd */; };
 		E91325EE1C13FD3700F8FD4F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E91325ED1C13FD3700F8FD4F /* libsqlite3.tbd */; };
+		E9240CEE1C2F53680082E512 /* Blockchain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9240CED1C2F53680082E512 /* Blockchain.m */; };
+		E93122501C308FF3000AB635 /* Vote.m in Sources */ = {isa = PBXBuildFile; fileRef = E931224F1C308FF3000AB635 /* Vote.m */; };
 		E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EA9F1C1CAC8000D899BF /* UserManager.m */; };
 		E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA21C1CACBC00D899BF /* ElectionManager.m */; };
 		E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E933EAA91C1CB27900D899BF /* PickElectionVC.m */; };
@@ -45,9 +48,6 @@
 		E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3021A1C1FB9C50058528D /* InstructionViewController.m */; };
 		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
 		E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B421C13F005001B387C /* Parse.framework */; };
-		E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B431C13F005001B387C /* ParseFacebookUtils.framework */; };
-		E9EC9B4A1C13F005001B387C /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B441C13F005001B387C /* ParseFacebookUtilsV4.framework */; };
-		E9EC9B4B1C13F005001B387C /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B451C13F005001B387C /* ParseTwitterUtils.framework */; };
 		E9EC9B4C1C13F005001B387C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B461C13F005001B387C /* ParseUI.framework */; };
 		E9EC9B591C13F801001B387C /* Election.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EC9B581C13F801001B387C /* Election.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A3981F0D1CCA143ED6A4103 /* Pods-Kiosk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiosk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk.debug.xcconfig"; sourceTree = "<group>"; };
+		DA8D71FF4538DF65A64E749F /* Pods-Kiosk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiosk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk.release.xcconfig"; sourceTree = "<group>"; };
 		E91325DB1C13FCE800F8FD4F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E91325DD1C13FCF000F8FD4F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E91325DF1C13FCF700F8FD4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +82,10 @@
 		E91325E91C13FD1E00F8FD4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E91325EB1C13FD2C00F8FD4F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E91325ED1C13FD3700F8FD4F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E9240CEC1C2F53680082E512 /* Blockchain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blockchain.h; path = model/Blockchain.h; sourceTree = "<group>"; };
+		E9240CED1C2F53680082E512 /* Blockchain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blockchain.m; path = model/Blockchain.m; sourceTree = "<group>"; };
+		E931224E1C308FF3000AB635 /* Vote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vote.h; path = model/Vote.h; sourceTree = "<group>"; };
+		E931224F1C308FF3000AB635 /* Vote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vote.m; path = model/Vote.m; sourceTree = "<group>"; };
 		E933EA9E1C1CAC8000D899BF /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = model/UserManager.h; sourceTree = "<group>"; };
 		E933EA9F1C1CAC8000D899BF /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = model/UserManager.m; sourceTree = "<group>"; };
 		E933EAA11C1CACBC00D899BF /* ElectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElectionManager.h; path = model/ElectionManager.h; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		E9EC9B461C13F005001B387C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		E9EC9B571C13F801001B387C /* Election.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Election.h; path = model/Election.h; sourceTree = "<group>"; };
 		E9EC9B581C13F801001B387C /* Election.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Election.m; path = model/Election.m; sourceTree = "<group>"; };
+		FC2A3A3407C8E6452CB0E9B4 /* libPods-Kiosk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kiosk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +166,7 @@
 				E9EC9B4C1C13F005001B387C /* ParseUI.framework in Frameworks */,
 				E9EC9B481C13F005001B387C /* Parse.framework in Frameworks */,
 				E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */,
-				E9EC9B4A1C13F005001B387C /* ParseFacebookUtilsV4.framework in Frameworks */,
-				E9EC9B491C13F005001B387C /* ParseFacebookUtils.framework in Frameworks */,
-				E9EC9B4B1C13F005001B387C /* ParseTwitterUtils.framework in Frameworks */,
+				A499137ADDB9489131FF270D /* libPods-Kiosk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +187,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B1E9FE827BCE56365AABBFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC2A3A3407C8E6452CB0E9B4 /* libPods-Kiosk.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9240CEB1C2F53360082E512 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				E9240CEC1C2F53680082E512 /* Blockchain.h */,
+				E9240CED1C2F53680082E512 /* Blockchain.m */,
+			);
+			name = Blockchain;
+			sourceTree = "<group>";
+		};
+		E931224D1C308FE8000AB635 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				E931224E1C308FF3000AB635 /* Vote.h */,
+				E931224F1C308FF3000AB635 /* Vote.m */,
+			);
+			name = Vote;
+			sourceTree = "<group>";
+		};
 		E933EA991C1CAB4300D899BF /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +287,8 @@
 				E96FD60B1C13DD1400EED512 /* KioskTests */,
 				E96FD6161C13DD1400EED512 /* KioskUITests */,
 				E96FD5F01C13DD1400EED512 /* Products */,
+				EAD9D19B8C3DC10F806477E1 /* Pods */,
+				5B1E9FE827BCE56365AABBFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -456,6 +489,8 @@
 		E9EC9B4D1C13F0B6001B387C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E931224D1C308FE8000AB635 /* Vote */,
+				E9240CEB1C2F53360082E512 /* Blockchain */,
 				E99E70351C2F02C900150557 /* ReviewHeaderCell */,
 				E99E70311C2EF90600150557 /* ReviewCell */,
 				E933EAA41C1CADD300D899BF /* APIKey */,
@@ -490,6 +525,15 @@
 			name = ElectionManager;
 			sourceTree = "<group>";
 		};
+		EAD9D19B8C3DC10F806477E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A3981F0D1CCA143ED6A4103 /* Pods-Kiosk.debug.xcconfig */,
+				DA8D71FF4538DF65A64E749F /* Pods-Kiosk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -497,9 +541,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E96FD61C1C13DD1400EED512 /* Build configuration list for PBXNativeTarget "Kiosk" */;
 			buildPhases = (
+				42BFF0DFEE4963044974594F /* Check Pods Manifest.lock */,
 				E96FD5EB1C13DD1400EED512 /* Sources */,
 				E96FD5EC1C13DD1400EED512 /* Frameworks */,
 				E96FD5ED1C13DD1400EED512 /* Resources */,
+				D207C789EC412AEBC6EE5BC5 /* Embed Pods Frameworks */,
+				7685E7F435239B757EAFFEA8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -616,6 +663,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42BFF0DFEE4963044974594F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7685E7F435239B757EAFFEA8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D207C789EC412AEBC6EE5BC5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kiosk/Pods-Kiosk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E96FD5EB1C13DD1400EED512 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -638,8 +733,10 @@
 				E933EAA31C1CACBC00D899BF /* ElectionManager.m in Sources */,
 				E99E70301C2B996600150557 /* VoteReviewVC.m in Sources */,
 				E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */,
+				E93122501C308FF3000AB635 /* Vote.m in Sources */,
 				E9EC9B591C13F801001B387C /* Election.m in Sources */,
 				E9708D061C1CC45D00433013 /* BButton.m in Sources */,
+				E9240CEE1C2F53680082E512 /* Blockchain.m in Sources */,
 				E933EAA01C1CAC8000D899BF /* UserManager.m in Sources */,
 				E96FD5F41C13DD1400EED512 /* main.m in Sources */,
 			);
@@ -734,7 +831,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -778,6 +875,7 @@
 		};
 		E96FD61D1C13DD1400EED512 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3981F0D1CCA143ED6A4103 /* Pods-Kiosk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -785,6 +883,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Kiosk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SureVoting.Kiosk;
 				PRODUCT_NAME = Kiosk;
@@ -794,6 +893,7 @@
 		};
 		E96FD61E1C13DD1400EED512 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8D71FF4538DF65A64E749F /* Pods-Kiosk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -801,6 +901,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Kiosk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SureVoting.Kiosk;
 				PRODUCT_NAME = Kiosk;
