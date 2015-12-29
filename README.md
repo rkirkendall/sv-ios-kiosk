@@ -1,1 +1,1 @@
-# SureVoting-iOS-demo
+# sv-ios-kiosk
