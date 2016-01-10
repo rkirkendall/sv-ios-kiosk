@@ -33,8 +33,9 @@
             NSDate *now = [NSDate date];
             if ([vt.expires laterDate:now] == now) {
                 completion(NO);
+            }else{
+                completion(YES);
             }
-            completion(YES);
         }
     }];
 }

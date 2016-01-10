@@ -39,6 +39,10 @@
 
 - (IBAction)signInTapped:(id)sender {
     
+    if ([self.voterTokenTextField.text isEqualToString:@""]) {
+        return;
+    }
+    
     self.signInButton.enabled = NO;
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];

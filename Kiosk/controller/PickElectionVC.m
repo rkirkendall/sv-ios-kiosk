@@ -29,6 +29,10 @@
 
 - (IBAction)startVotingTapped:(id)sender {
     
+    if ([self.electionIdField.text isEqualToString:@""]) {
+        return;
+    }
+    
     self.startVotingButton.enabled = NO;
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
