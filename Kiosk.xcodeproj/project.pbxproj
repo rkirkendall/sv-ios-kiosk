@@ -41,6 +41,8 @@
 		E9708D1C1C1D1C1B00433013 /* Candidate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D1B1C1D1C1B00433013 /* Candidate.m */; };
 		E9708D231C1D1D1700433013 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D221C1D1D1700433013 /* Party.m */; };
 		E9708D271C1D1DCA00433013 /* Kiosk.m in Sources */ = {isa = PBXBuildFile; fileRef = E9708D261C1D1DCA00433013 /* Kiosk.m */; };
+		E98DF9011C3B185000F1DEC7 /* VoterSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E98DF9001C3B185000F1DEC7 /* VoterSignInVC.m */; };
+		E98DF9051C3B19F200F1DEC7 /* VoterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E98DF9041C3B19F200F1DEC7 /* VoterToken.m */; };
 		E99E70301C2B996600150557 /* VoteReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E702F1C2B996600150557 /* VoteReviewVC.m */; };
 		E99E70341C2EF93800150557 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E70331C2EF93800150557 /* ReviewCell.m */; };
 		E99E70381C2F02DB00150557 /* ReviewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E70371C2F02DB00150557 /* ReviewHeaderCell.m */; };
@@ -128,6 +130,10 @@
 		E9708D221C1D1D1700433013 /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Party.m; path = model/Party.m; sourceTree = "<group>"; };
 		E9708D251C1D1DCA00433013 /* Kiosk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Kiosk.h; path = model/Kiosk.h; sourceTree = "<group>"; };
 		E9708D261C1D1DCA00433013 /* Kiosk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Kiosk.m; path = model/Kiosk.m; sourceTree = "<group>"; };
+		E98DF8FF1C3B185000F1DEC7 /* VoterSignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoterSignInVC.h; path = controller/VoterSignInVC.h; sourceTree = "<group>"; };
+		E98DF9001C3B185000F1DEC7 /* VoterSignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoterSignInVC.m; path = controller/VoterSignInVC.m; sourceTree = "<group>"; };
+		E98DF9031C3B19F200F1DEC7 /* VoterToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoterToken.h; path = model/VoterToken.h; sourceTree = "<group>"; };
+		E98DF9041C3B19F200F1DEC7 /* VoterToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoterToken.m; path = model/VoterToken.m; sourceTree = "<group>"; };
 		E99E702E1C2B996600150557 /* VoteReviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoteReviewVC.h; path = controller/VoteReviewVC.h; sourceTree = "<group>"; };
 		E99E702F1C2B996600150557 /* VoteReviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VoteReviewVC.m; path = controller/VoteReviewVC.m; sourceTree = "<group>"; };
 		E99E70321C2EF93800150557 /* ReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewCell.h; path = model/ReviewCell.h; sourceTree = "<group>"; };
@@ -244,6 +250,7 @@
 		E933EA9C1C1CAB7000D899BF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E98DF8FE1C3B181600F1DEC7 /* Voter Sign In */,
 				E99E702D1C2B994500150557 /* Vote Review */,
 				E9D302181C1FB8F90058528D /* Instruction VC */,
 				E933EAAB1C1CBF5E00D899BF /* Vote Ticket */,
@@ -426,6 +433,24 @@
 			name = Kiosk;
 			sourceTree = "<group>";
 		};
+		E98DF8FE1C3B181600F1DEC7 /* Voter Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				E98DF8FF1C3B185000F1DEC7 /* VoterSignInVC.h */,
+				E98DF9001C3B185000F1DEC7 /* VoterSignInVC.m */,
+			);
+			name = "Voter Sign In";
+			sourceTree = "<group>";
+		};
+		E98DF9021C3B19DE00F1DEC7 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				E98DF9031C3B19F200F1DEC7 /* VoterToken.h */,
+				E98DF9041C3B19F200F1DEC7 /* VoterToken.m */,
+			);
+			name = Token;
+			sourceTree = "<group>";
+		};
 		E99E702D1C2B994500150557 /* Vote Review */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +514,7 @@
 		E9EC9B4D1C13F0B6001B387C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E98DF9021C3B19DE00F1DEC7 /* Token */,
 				E931224D1C308FE8000AB635 /* Vote */,
 				E9240CEB1C2F53360082E512 /* Blockchain */,
 				E99E70351C2F02C900150557 /* ReviewHeaderCell */,
@@ -719,6 +745,7 @@
 				E9708D271C1D1DCA00433013 /* Kiosk.m in Sources */,
 				E9708D071C1CC45D00433013 /* NSString+FontAwesome.m in Sources */,
 				E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */,
+				E98DF9051C3B19F200F1DEC7 /* VoterToken.m in Sources */,
 				E9708D231C1D1D1700433013 /* Party.m in Sources */,
 				E9708D101C1CED0000433013 /* VoteTicketViewController.m in Sources */,
 				E99E70341C2EF93800150557 /* ReviewCell.m in Sources */,
@@ -727,6 +754,7 @@
 				E9708D1C1C1D1C1B00433013 /* Candidate.m in Sources */,
 				E9708D0D1C1CEA6300433013 /* CandidateTableViewCell.m in Sources */,
 				E9AE8EC71C2F1A8E00D853F6 /* APIKey.m in Sources */,
+				E98DF9011C3B185000F1DEC7 /* VoterSignInVC.m in Sources */,
 				E99E70381C2F02DB00150557 /* ReviewHeaderCell.m in Sources */,
 				E9708D081C1CC45D00433013 /* UIColor+BButton.m in Sources */,
 				E9708D181C1D1B2900433013 /* Office.m in Sources */,

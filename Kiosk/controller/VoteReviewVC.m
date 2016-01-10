@@ -31,7 +31,9 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    
+    self.navigationItem.hidesBackButton = NO;
+    self.activityIndicator.hidden = YES;
+    self.submitButton.enabled = YES;
     // Populate data source with offices and voted-on candidates
     
     self.dataSource = [NSMutableDictionary dictionary];
@@ -86,6 +88,11 @@
 
 - (IBAction)submitButtonTapped:(id)sender {
     
+    self.submitButton.enabled = NO;
+    self.activityIndicator.hidden = NO;
+    self.navigationItem.hidesBackButton = YES;
+    [self.activityIndicator startAnimating];
+    
     // Save votes
     Election *current = [[ElectionManager Manager] currentElection];
     NSArray *offices = [current offices];
@@ -132,7 +139,10 @@
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               // Go back to instruction view
-                                                              [self.navigationController popToRootViewControllerAnimated:YES];
+                                                              //[self.navigationController popToRootViewControllerAnimated:YES];
+                                                              
+                                                              // Go back to voter sign in
+                                                              [self.navigationController dismissViewControllerAnimated:YES completion:nil];
                                                               
                                                           }];
     

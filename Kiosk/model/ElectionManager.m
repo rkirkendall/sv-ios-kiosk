@@ -24,6 +24,21 @@
     return self;
 }
 
+- (void)validateVoterToken:(NSString *)tokenId withCompletion:(void (^)(BOOL valid))completion{
+    VoterToken *vt = [VoterToken objectWithoutDataWithObjectId:tokenId];
+    [vt fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (error || !object.objectId) {
+            completion(NO);
+        }else{
+            NSDate *now = [NSDate date];
+            if ([vt.expires laterDate:now] == now) {
+                completion(NO);
+            }
+            completion(YES);
+        }
+    }];
+}
+
 - (void)joinElectionWithId:(NSString *)eid withCompletion:(void (^)(BOOL valid))completion{
     self.currentElection = [Election objectWithoutDataWithObjectId:eid];
     
@@ -34,24 +49,29 @@
         NSLog(@"%@",self.currentElection.name);
         
         PFQuery *partyQuery = [PFQuery queryWithClassName:@"Party"];
-        self.currentElection.parties = [partyQuery findObjects];
-        
-        PFQuery *officeQuery = [PFQuery queryWithClassName:@"Office"];
-        [officeQuery whereKey:@"election" equalTo:self.currentElection];
-        NSArray *unsortedOffices = [officeQuery findObjects];
-        NSArray *sortedOffices = [unsortedOffices sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-            NSNumber *first = [(Office*)a order];
-            NSNumber *second = [(Office*)b order];
-            return [first compare:second];
+        [partyQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            self.currentElection.parties = objects;
+            
+            PFQuery *officeQuery = [PFQuery queryWithClassName:@"Office"];
+            [officeQuery whereKey:@"election" equalTo:self.currentElection];
+            [officeQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                NSArray *unsortedOffices = objects;
+                NSArray *sortedOffices = [unsortedOffices sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                    NSNumber *first = [(Office*)a order];
+                    NSNumber *second = [(Office*)b order];
+                    return [first compare:second];
+                }];
+                self.currentElection.offices = sortedOffices;
+                PFQuery *candidateQuery = [PFQuery queryWithClassName:@"Candidate"];
+                [candidateQuery whereKey:@"election" equalTo:self.currentElection];
+                [candidateQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                    self.currentElection.candidates = objects;
+                    completion(YES);
+                }];
+                
+            }];
         }];
         
-        self.currentElection.offices = sortedOffices;
-        
-        PFQuery *candidateQuery = [PFQuery queryWithClassName:@"Candidate"];
-        [candidateQuery whereKey:@"election" equalTo:self.currentElection];
-        self.currentElection.candidates = [candidateQuery findObjects];
-        
-        completion(YES);
     }];
 }
 

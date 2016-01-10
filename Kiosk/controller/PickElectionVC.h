@@ -16,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *invalidElectionMessage;
 
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+
 @end
 
