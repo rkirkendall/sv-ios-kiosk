@@ -8,115 +8,148 @@
 
 #import "Blockchain.h"
 #import <AFNetworking/AFNetworking.h>
+#import <CoreBitcoin/CoreBitcoin.h>
 #import "Vote.h"
 #define kElectionAddresses @"kElectionAddresses"
 
 @implementation Blockchain
 
 
-+ (AFHTTPRequestOperation *) SendVote:(NSDictionary *)voteDict withCompletion:(void (^)(BOOL success, NSString *toAddress))completion{
++ (void) CreateVoteTxWithCompletion:(void (^)(BOOL success, NSDictionary *transaction))completion{
+    Election *current = [[ElectionManager Manager] currentElection];
+    NSMutableDictionary *addresses = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:kElectionAddresses] mutableCopy];
+    NSDictionary *address = addresses[current.objectId];
     
-    // Create manager
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"https://api.blockcypher.com/v1/btc/main/txs/f854aebae95150b379cc1187d848d58225f3c4157fe992bcd166f58bd5063449" parameters:nil error:NULL];
+    NSString *kioskAddress = address[kAddressKey];
+    NSMutableArray *outputs = [[NSMutableArray alloc]init];
+    
+    NSMutableArray *votesToCast = [[[NSUserDefaults standardUserDefaults] objectForKey:kVoteStore] mutableCopy];
+    for (NSDictionary *voteDict in votesToCast) {
+        NSString *toAddress = voteDict[kCandidateAddress];
+        NSMutableDictionary *mutDict = [[NSMutableDictionary alloc]init];
+        mutDict[@"value"] = @2000;
+        mutDict[@"addresses"] = @[toAddress];
+        [outputs addObject:mutDict];
+        
+    }
+    
+    NSArray *inputs = @[
+                        @{
+                            @"addresses": @[
+                                    kioskAddress
+                                    ]
+                            }
+                        ];
+    NSDictionary* bodyObject = @{
+                                 @"inputs": inputs,
+                                 @"outputs": outputs
+                                 };
+    
+    NSMutableURLRequest* request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"https://api.blockcypher.com/v1/btc/main/txs/new" parameters:bodyObject error:NULL];
+    
+    // Add Headers
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     // Fetch Request
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
                                                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                              NSLog(@"HTTP Response Status Code: %ld", [operation.response statusCode]);
-                                                                             NSDictionary *respDict = (NSDictionary *)responseObject;
-                                                                             NSString *toAddress = respDict[@"to_address"];
-                                                                             if (!toAddress) {
-                                                                                 // For testing
-                                                                                 toAddress = @"";
-                                                                             }
                                                                              NSLog(@"HTTP Response Body: %@", responseObject);
-                                                                             completion(YES, toAddress);
+                                                                             NSDictionary *trans = (NSDictionary *)responseObject;
+                                                                             if ([operation.response statusCode] >= 400) {
+                                                                                 completion(NO, nil);
+                                                                             }else{
+                                                                                 completion(YES, trans);
+                                                                                 
+                                                                             }
                                                                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                             NSLog(@"HTTP Request failed: %@", error);
-                                                                             completion(NO, @"");
+                                                                             NSLog(@"Problem getting blank transaction");
+                                                                             completion(NO, nil);
                                                                          }];
     
-    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    
-    return operation;
+    [manager.operationQueue addOperation:operation];
+
 }
 
-+ (void) CastVotesWithCompletion:(void (^)(BOOL success))completion{
-    NSMutableArray *votesToCast = [[[NSUserDefaults standardUserDefaults] objectForKey:kVoteStore] mutableCopy];
-    NSMutableArray *toRemove = [NSMutableArray array];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
++(NSDictionary *) SignVoteTX:(NSDictionary *)transaction{
+    NSString *toSignHash = transaction[@"tosign"][0];
+    NSMutableDictionary *mutCopy = [transaction mutableCopy];
+    
     Election *current = [[ElectionManager Manager] currentElection];
+    NSMutableDictionary *addresses = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:kElectionAddresses] mutableCopy];
+    NSDictionary *address = addresses[current.objectId];
     
-    // Get kiosk BTC Address
+    // Put kiosk's private key for current election here
+    NSString *privKey = address[kPrivateKey];
     
-    [Blockchain CreateOrGetBTCAddressForElectionID:current.objectId withCompletion:^(NSDictionary *address) {
-        
-        
-        // Queue up vote networking operations
-        
-        NSMutableArray *mutableOperations = [NSMutableArray array];
-        for (NSDictionary *voteDict in votesToCast) {
-            AFHTTPRequestOperation *operation = [Blockchain SendVote:voteDict withCompletion:^(BOOL success, NSString *toAddress) {
-                
-                // Mark successes as completed
-                
-                if (success) {
-                    [toRemove addObject:toAddress];
-                }
-            }];
-            
-            [mutableOperations addObject:operation];
-        }
-        
-        NSArray *voteOps = [AFURLConnectionOperation batchOfRequestOperations:mutableOperations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
-            
-            // As network operations return, remove the votes from cache
-            
-            NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
-            
-            NSInteger count = 0;
-            NSMutableIndexSet *ixToRemove = [[NSMutableIndexSet alloc]init];
-            for (NSString *toAdd in toRemove) {
-                for (NSDictionary *vote in votesToCast) {
-                    if ([vote[kCandidateAddress] isEqualToString:toAdd]) {
-                        [ixToRemove addIndex:count];
-                    }
-                    count ++;
-                }
-                count = 0;
-            }
-            
-            [votesToCast removeObjectsAtIndexes:ixToRemove];
-            [toRemove removeAllObjects];
-            [[NSUserDefaults standardUserDefaults] setObject:votesToCast forKey:kVoteStore];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-        } completionBlock:^(NSArray *operations) {
-            
-            
-            // Batching would be nice here...
-            
-            // If any votes remained cached, there was a networking error and the remaining votes need
-            // to be resubmitted.
-            
-            NSLog(@"All operations in batch complete");
-            NSArray *remaining = [[NSUserDefaults standardUserDefaults] objectForKey:kVoteStore];
-            NSLog(@"Remaining votes: %lu",remaining.count);
-            
-            if (remaining.count == 0) {
-                completion(YES);
-            }else{
-                completion(NO);
-            }
-            
-        }];
-        
-        [manager.operationQueue addOperations:voteOps waitUntilFinished:NO];
-    }];    
+    // Put kiosk's public key for current election here
+    NSString *pubkey = address[kPublicKey];
     
+    NSData *privKeyFromHex = BTCDataFromHex(privKey);
+    BTCKey *myKey = [[BTCKey alloc]initWithPrivateKey:privKeyFromHex];
+    
+    NSString *hashHex = toSignHash;
+    NSData *hashData = BTCDataFromHex(hashHex);
+    
+    NSData *sigForHash = [myKey signatureForHash:hashData];
+    
+    NSString *sigString = BTCHexFromData(sigForHash);
+    NSLog(@"%@",sigString);
+    
+    mutCopy[@"signatures"] = @[sigString];
+    
+    // Put pub key
+    mutCopy[@"pubkeys"] = @[pubkey];
+    
+    return mutCopy;
 }
+
++ (void) SendSignedVoteTx:(NSDictionary *)trans withCompletion:(void (^)(BOOL success, NSDictionary *transaction))completion{
+    // Send Transaction (POST https://api.blockcypher.com/v1/bcy/test/txs/send)
+    
+    // Create manager
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    // JSON Body
+    NSDictionary* bodyObject = trans;
+    
+    NSMutableURLRequest* request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"https://api.blockcypher.com/v1/btc/main/txs/send" parameters:bodyObject error:NULL];
+    
+    // Add Headers
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    // Fetch Request
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
+                                                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                                             
+                                                                             completion(YES, (NSDictionary *)responseObject);
+                                                                             
+                                                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                                             NSLog(@"HTTP Request failed: %@", error);
+                                                                             completion(NO, nil);
+                                                                         }];
+    
+    [manager.operationQueue addOperation:operation];
+}
+
+
++ (void) CastVotesWithCompletion:(void (^)(BOOL success))completion{
+    [Blockchain CreateVoteTxWithCompletion:^(BOOL success, NSDictionary *transaction) {
+        if (success) {
+            NSDictionary *signedTx = [Blockchain SignVoteTX:transaction];
+            [Blockchain SendSignedVoteTx:signedTx withCompletion:^(BOOL success, NSDictionary *transaction) {
+                [[NSUserDefaults standardUserDefaults] setObject:@[] forKey:kVoteStore];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                completion(success);
+            }];
+        }else{
+            completion(success);
+        }
+    }];
+}
+
 
 + (void) CreateOrGetBTCAddressForElectionID:(NSString *)electionID withCompletion:(void (^)(NSDictionary *address))completion{
     NSMutableDictionary *addresses = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:kElectionAddresses] mutableCopy];

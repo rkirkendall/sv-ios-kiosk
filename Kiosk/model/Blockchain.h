@@ -21,6 +21,5 @@
 
 + (void) CastVotesWithCompletion:(void (^)(BOOL success))completion;
 
-+ (AFHTTPRequestOperation *) SendVote:(NSDictionary *)voteDict withCompletion:(void (^)(BOOL success, NSString *toAddress))completion;
 
 @end

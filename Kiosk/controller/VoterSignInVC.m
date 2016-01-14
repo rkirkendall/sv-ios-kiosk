@@ -9,6 +9,7 @@
 #import "VoterSignInVC.h"
 #import "ElectionManager.h"
 #import "SVUtil.h"
+#import "Vote.h"
 @interface VoterSignInVC ()
 
 @end
@@ -38,6 +39,9 @@
 
 
 - (IBAction)signInTapped:(id)sender {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kVoteStore];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     if ([self.voterTokenTextField.text isEqualToString:@""]) {
         return;
