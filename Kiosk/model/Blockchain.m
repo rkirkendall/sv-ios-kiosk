@@ -11,6 +11,7 @@
 #import <CoreBitcoin/CoreBitcoin.h>
 #import "Vote.h"
 #define kElectionAddresses @"kElectionAddresses"
+#define kBTC_TX_AMT @5000
 
 @implementation Blockchain
 
@@ -29,7 +30,7 @@
     for (NSDictionary *voteDict in votesToCast) {
         NSString *toAddress = voteDict[kCandidateAddress];
         NSMutableDictionary *mutDict = [[NSMutableDictionary alloc]init];
-        mutDict[@"value"] = @2000;
+        mutDict[@"value"] = kBTC_TX_AMT;
         mutDict[@"addresses"] = @[toAddress];
         [outputs addObject:mutDict];
         
