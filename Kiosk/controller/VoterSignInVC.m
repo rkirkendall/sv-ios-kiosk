@@ -8,6 +8,7 @@
 
 #import "VoterSignInVC.h"
 #import "ElectionManager.h"
+#import "Blockchain.h"
 #import "SVUtil.h"
 #import "Vote.h"
 #import "PinEntryViewController.h"
@@ -24,6 +25,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [Blockchain RefundFromCandidates:^(BOOL success) {
+        
+    }];
     
     self.tokenError.hidden = YES;
     self.activityIndicator.hidden = YES;

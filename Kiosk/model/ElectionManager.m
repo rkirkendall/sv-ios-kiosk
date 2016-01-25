@@ -51,38 +51,28 @@
         
         // Register kiosk
         
-        [Blockchain CreateOrGetBTCAddressForElectionID:eid withCompletion:^(NSDictionary *address) {
-            NSLog(@" got the kiosk address for election");
-            
-            //Send kiosk object
-            Kiosk *toRegister = [Kiosk object];
-            toRegister.election = self.currentElection;
-            [toRegister setBtcAddress:address[kAddressKey]];
-            [toRegister setPublicKey:address[kPublicKey]];
-            NSString *udid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-            [toRegister setKioskId:udid];
-            [toRegister saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                PFQuery *partyQuery = [PFQuery queryWithClassName:@"Party"];
-                [partyQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-                    self.currentElection.parties = objects;                    
-                    PFQuery *officeQuery = [PFQuery queryWithClassName:@"Office"];
-                    [officeQuery whereKey:@"election" equalTo:self.currentElection];
-                    [officeQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-                        NSArray *unsortedOffices = objects;
-                        NSArray *sortedOffices = [unsortedOffices sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-                            NSNumber *first = [(Office*)a order];
-                            NSNumber *second = [(Office*)b order];
-                            return [first compare:second];
-                        }];
-                        self.currentElection.offices = sortedOffices;
-                        PFQuery *candidateQuery = [PFQuery queryWithClassName:@"Candidate"];
-                        [candidateQuery whereKey:@"election" equalTo:self.currentElection];
-                        [candidateQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-                            self.currentElection.candidates = objects;
-                            completion(YES);
-                        }];
-                        
+        [Blockchain CreateOrGetBTCAddressForElection:self.currentElection withCompletion:^(NSDictionary *address) {
+            NSLog(@" got the kiosk address for election");            
+            PFQuery *partyQuery = [PFQuery queryWithClassName:@"Party"];
+            [partyQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                self.currentElection.parties = objects;
+                PFQuery *officeQuery = [PFQuery queryWithClassName:@"Office"];
+                [officeQuery whereKey:@"election" equalTo:self.currentElection];
+                [officeQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                    NSArray *unsortedOffices = objects;
+                    NSArray *sortedOffices = [unsortedOffices sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+                        NSNumber *first = [(Office*)a order];
+                        NSNumber *second = [(Office*)b order];
+                        return [first compare:second];
                     }];
+                    self.currentElection.offices = sortedOffices;
+                    PFQuery *candidateQuery = [PFQuery queryWithClassName:@"Candidate"];
+                    [candidateQuery whereKey:@"election" equalTo:self.currentElection];
+                    [candidateQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                        self.currentElection.candidates = objects;
+                        completion(YES);
+                    }];
+                    
                 }];
             }];
             

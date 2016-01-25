@@ -10,11 +10,108 @@
 #import <AFNetworking/AFNetworking.h>
 #import <CoreBitcoin/CoreBitcoin.h>
 #import "Vote.h"
+#import "Kiosk.h"
 #define kElectionAddresses @"kElectionAddresses"
 #define kBTC_TX_AMT @5000
 
 @implementation Blockchain
 
++ (void) RefundFromCandidates:(void (^)(BOOL success))completion{
+    
+    // Get address for funding account
+    [Blockchain CreateOrGetBTCAddressForElection:[[ElectionManager Manager] currentElection] withCompletion:^(NSDictionary *address) {
+        NSString *addressString = address[kAddressKey];
+        [Blockchain FirstTxForAddress:addressString withCompletion:^(BOOL success, NSString *txHash) {
+            if (success && txHash && ![txHash isEqualToString:@""]) {
+                [Blockchain GetSenderAddressFromTx:txHash withCompletion:^(BOOL success, NSString *sender) {
+                    if (success && sender && ![sender isEqualToString:@""]) {
+                        NSLog(@"Sender: %@", sender);
+                    }
+                }];
+            }
+        }];
+    }];
+    
+    
+    // Get all the candidate addresses and private keys
+    
+    // Get balance for each account
+    
+    
+    // Create a transaction with multiple inputs (cand. addresses) in to one output (funding account)
+}
+
++ (void) GetSenderAddressFromTx:(NSString *)txHash withCompletion:(void (^)(BOOL success, NSString *sender))completion{
+    // Get Tx Info (GET https://api.blockcypher.com/v1/btc/main/txs/0c83c8321537a7c79dc6214788944ba6cd5ea76f0594453b6251fcf1856f2e4b)
+    
+    // Create manager
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    // Create request
+    NSString *urlString = [NSString stringWithFormat:@"https://api.blockcypher.com/v1/btc/main/txs/%@",txHash];
+    NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlString parameters:nil error:NULL];
+    
+    // Fetch Request
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
+                                                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                                             if (responseObject) {
+                                                                                 NSDictionary *input1 = responseObject[@"inputs"][0];
+                                                                                 NSString *address = input1[@"addresses"][0];
+                                                                                 completion(YES, address);
+                                                                             }else{
+                                                                                 completion(NO, nil);
+                                                                             }
+                                                                             
+                                                                             NSLog(@"HTTP Response Status Code: %ld", [operation.response statusCode]);
+                                                                             NSLog(@"HTTP Response Body: %@", responseObject);
+                                                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                                             completion(NO, nil);
+                                                                             NSLog(@"HTTP Request failed: %@", error);
+                                                                         }];
+    
+    [manager.operationQueue addOperation:operation];
+    
+
+}
+
++ (void) FirstTxForAddress:(NSString *)address withCompletion:(void (^)(BOOL success, NSString *txHash))completion{
+    
+    // Create manager
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    // Create request
+    NSString *urlString = [NSString stringWithFormat:@"https://api.blockcypher.com/v1/btc/main/addrs/%@",address];
+    
+    NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlString parameters:nil error:NULL];
+    
+    // Fetch Request
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
+                                                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                                             
+                                                                             if (responseObject) {
+                                                                                 NSArray *txsRefs= responseObject[@"txrefs"];
+                                                                                 if (!txsRefs) {
+                                                                                     completion(NO,nil);
+                                                                                     return;
+                                                                                 }
+                                                                                 //sorted: newest first
+                                                                                 NSDictionary *firstTx = [txsRefs lastObject];
+                                                                                 NSString *txHash = firstTx[@"tx_hash"];
+                                                                                 completion(YES, txHash);
+                                                                             }else{
+                                                                                 completion(NO, nil);
+                                                                             }
+                                                                             
+                                                                             NSLog(@"HTTP Response Status Code: %ld", [operation.response statusCode]);
+                                                                             NSLog(@"HTTP Response Body: %@", responseObject);
+                                                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                                             NSLog(@"HTTP Request failed: %@", error);
+                                                                             completion(NO, nil);
+                                                                         }];
+    
+    [manager.operationQueue addOperation:operation];
+
+}
 
 + (void) CreateVoteTxWithCompletion:(void (^)(BOOL success, NSDictionary *transaction))completion{
     Election *current = [[ElectionManager Manager] currentElection];
@@ -152,14 +249,14 @@
 }
 
 
-+ (void) CreateOrGetBTCAddressForElectionID:(NSString *)electionID withCompletion:(void (^)(NSDictionary *address))completion{
++ (void) CreateOrGetBTCAddressForElection:(Election *)election withCompletion:(void (^)(NSDictionary *address))completion{
     NSMutableDictionary *addresses = [[[NSUserDefaults standardUserDefaults] dictionaryForKey:kElectionAddresses] mutableCopy];
     
     if (!addresses) {
         addresses = [NSMutableDictionary dictionary];
     }
     
-    NSDictionary *address = addresses[electionID];
+    NSDictionary *address = addresses[election.objectId];
     
     if (address) {
         
@@ -178,12 +275,29 @@
         AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
                                                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                                  
-                                                                                 NSDictionary *resp = (NSDictionary *)responseObject;
-                                                                                 addresses[electionID] = resp;
+                                                                                 if (responseObject) {
+                                                                                     NSDictionary *resp = (NSDictionary *)responseObject;
+                                                                                     //Send kiosk object
+                                                                                     Kiosk *toRegister = [Kiosk object];
+                                                                                     toRegister.election = election;
+                                                                                     [toRegister setBtcAddress:resp[kAddressKey]];
+                                                                                     [toRegister setPublicKey:resp[kPublicKey]];
+                                                                                     NSString *udid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+                                                                                     [toRegister setKioskId:udid];
+                                                                                     [toRegister saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                                                                                         
+                                                                                         if (!error) {
+                                                                                             addresses[election.objectId] = resp;
+                                                                                             [[NSUserDefaults standardUserDefaults] setObject:addresses forKey:kElectionAddresses];
+                                                                                             [[NSUserDefaults standardUserDefaults] synchronize];
+                                                                                             completion(resp);
+                                                                                             
+                                                                                         }else{
+                                                                                             completion(nil);
+                                                                                         }
+                                                                                     }];
+                                                                                 }
                                                                                  
-                                                                                 [[NSUserDefaults standardUserDefaults] setObject:addresses forKey:kElectionAddresses];
-                                                                                 [[NSUserDefaults standardUserDefaults] synchronize];
-                                                                                 completion(resp);
                                                                                  
                                                                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                                                  NSLog(@"HTTP Request failed: %@", error);

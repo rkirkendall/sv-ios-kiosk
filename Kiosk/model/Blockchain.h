@@ -17,9 +17,14 @@
 
 @interface Blockchain : NSObject
 
-+ (void) CreateOrGetBTCAddressForElectionID:(NSString *)electionID withCompletion:(void (^)(NSDictionary *address))completion;
++ (void) CreateOrGetBTCAddressForElection:(Election *)election withCompletion:(void (^)(NSDictionary *address))completion;
 
 + (void) CastVotesWithCompletion:(void (^)(BOOL success))completion;
+
++ (void) RefundFromCandidates:(void (^)(BOOL success))completion;
+
++ (void) GetSenderAddressFromTx:(NSString *)txHash withCompletion:(void (^)(BOOL success, NSString *sender))completion;
++ (void) FirstTxForAddress:(NSString *)address withCompletion:(void (^)(BOOL success, NSString *txHash))completion;
 
 
 @end
