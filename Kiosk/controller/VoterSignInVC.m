@@ -10,6 +10,7 @@
 #import "ElectionManager.h"
 #import "SVUtil.h"
 #import "Vote.h"
+#import "PinEntryViewController.h"
 @interface VoterSignInVC ()
 
 @end
@@ -30,11 +31,34 @@
     [self.signInButton setColor:[SVUtil buttonGreen]];
     self.voterTokenTextField.text = @"";
     [self.signInButton.titleLabel setFont:[UIFont systemFontOfSize:16 weight:0.4]];
+    
+    UITapGestureRecognizer *adminTouch = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(adminPanelTapped)];
+    [adminTouch setNumberOfTouchesRequired:1];
+    
+    [self.view addGestureRecognizer:adminTouch];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) adminPanelTapped{
+    // Display modal presenatation of keypad
+    NSLog(@"TAP DONE");
+    [self performSegueWithIdentifier:@"showPinEntry" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"showPinEntry"]) {
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        
+        PinEntryViewController *dest = (PinEntryViewController *)navController.viewControllers[0];
+        dest.parentVC = self;        
+    }
+    
 }
 
 

@@ -46,6 +46,8 @@
 		E99E70301C2B996600150557 /* VoteReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E702F1C2B996600150557 /* VoteReviewVC.m */; };
 		E99E70341C2EF93800150557 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E70331C2EF93800150557 /* ReviewCell.m */; };
 		E99E70381C2F02DB00150557 /* ReviewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99E70371C2F02DB00150557 /* ReviewHeaderCell.m */; };
+		E9AD1C971C503ED000406D4E /* PinEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AD1C961C503ED000406D4E /* PinEntryViewController.m */; };
+		E9AD1C9B1C504A1700406D4E /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AD1C9A1C504A1700406D4E /* AdminViewController.m */; };
 		E9AE8EC71C2F1A8E00D853F6 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AE8EC61C2F1A8E00D853F6 /* APIKey.m */; };
 		E9D3021B1C1FB9C50058528D /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3021A1C1FB9C50058528D /* InstructionViewController.m */; };
 		E9EC9B471C13F005001B387C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EC9B411C13F005001B387C /* Bolts.framework */; };
@@ -140,6 +142,10 @@
 		E99E70331C2EF93800150557 /* ReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewCell.m; path = model/ReviewCell.m; sourceTree = "<group>"; };
 		E99E70361C2F02DB00150557 /* ReviewHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewHeaderCell.h; sourceTree = "<group>"; };
 		E99E70371C2F02DB00150557 /* ReviewHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewHeaderCell.m; sourceTree = "<group>"; };
+		E9AD1C951C503ED000406D4E /* PinEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinEntryViewController.h; path = controller/PinEntryViewController.h; sourceTree = "<group>"; };
+		E9AD1C961C503ED000406D4E /* PinEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinEntryViewController.m; path = controller/PinEntryViewController.m; sourceTree = "<group>"; };
+		E9AD1C991C504A1700406D4E /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdminViewController.h; path = controller/AdminViewController.h; sourceTree = "<group>"; };
+		E9AD1C9A1C504A1700406D4E /* AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdminViewController.m; path = controller/AdminViewController.m; sourceTree = "<group>"; };
 		E9AE8EC61C2F1A8E00D853F6 /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIKey.m; path = model/APIKey.m; sourceTree = "<group>"; };
 		E9D302191C1FB9C50058528D /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionViewController.h; path = controller/InstructionViewController.h; sourceTree = "<group>"; };
 		E9D3021A1C1FB9C50058528D /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionViewController.m; path = controller/InstructionViewController.m; sourceTree = "<group>"; };
@@ -250,6 +256,8 @@
 		E933EA9C1C1CAB7000D899BF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9AD1C981C5049FF00406D4E /* Admin Panel */,
+				E9AD1C941C503EA800406D4E /* Pin */,
 				E98DF8FE1C3B181600F1DEC7 /* Voter Sign In */,
 				E99E702D1C2B994500150557 /* Vote Review */,
 				E9D302181C1FB8F90058528D /* Instruction VC */,
@@ -476,6 +484,24 @@
 				E99E70371C2F02DB00150557 /* ReviewHeaderCell.m */,
 			);
 			name = ReviewHeaderCell;
+			sourceTree = "<group>";
+		};
+		E9AD1C941C503EA800406D4E /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				E9AD1C951C503ED000406D4E /* PinEntryViewController.h */,
+				E9AD1C961C503ED000406D4E /* PinEntryViewController.m */,
+			);
+			name = Pin;
+			sourceTree = "<group>";
+		};
+		E9AD1C981C5049FF00406D4E /* Admin Panel */ = {
+			isa = PBXGroup;
+			children = (
+				E9AD1C991C504A1700406D4E /* AdminViewController.h */,
+				E9AD1C9A1C504A1700406D4E /* AdminViewController.m */,
+			);
+			name = "Admin Panel";
 			sourceTree = "<group>";
 		};
 		E9D302181C1FB8F90058528D /* Instruction VC */ = {
@@ -742,9 +768,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AD1C9B1C504A1700406D4E /* AdminViewController.m in Sources */,
 				E9708D271C1D1DCA00433013 /* Kiosk.m in Sources */,
 				E9708D071C1CC45D00433013 /* NSString+FontAwesome.m in Sources */,
 				E933EAAA1C1CB27900D899BF /* PickElectionVC.m in Sources */,
+				E9AD1C971C503ED000406D4E /* PinEntryViewController.m in Sources */,
 				E98DF9051C3B19F200F1DEC7 /* VoterToken.m in Sources */,
 				E9708D231C1D1D1700433013 /* Party.m in Sources */,
 				E9708D101C1CED0000433013 /* VoteTicketViewController.m in Sources */,
