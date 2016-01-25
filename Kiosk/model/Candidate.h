@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *btcAddress;
+@property (nonatomic, strong) NSString *btcPrivateKey;
+@property (nonatomic, strong) NSString *btcPublicKey;
 @property (nonatomic, strong) NSString *creationType;
 @property (nonatomic, strong) Office *office;
 @property (nonatomic, strong) Party *party;

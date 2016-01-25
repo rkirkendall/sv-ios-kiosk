@@ -72,10 +72,22 @@
     [alert addAction:yesAction];
     [alert addAction:noAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
 - (IBAction)refundTapped:(id)sender {
+    
+    
+    
+    // Get all the candidate addresses and private keys
+    
+    // Get balance for each account
+    
+    // Get address for funding account
+    
+    // Create a transaction with multiple inputs (cand. addresses) in to one output (funding account)
+    
+    
+    
     
 }
 @end

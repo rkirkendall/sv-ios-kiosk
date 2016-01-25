@@ -13,6 +13,8 @@
 @dynamic firstName;
 @dynamic lastName;
 @dynamic btcAddress;
+@dynamic btcPrivateKey;
+@dynamic btcPublicKey;
 @dynamic creationType;
 @dynamic office;
 @dynamic party;

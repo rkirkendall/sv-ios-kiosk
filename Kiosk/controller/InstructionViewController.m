@@ -32,10 +32,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSString *electionID = [[[ElectionManager Manager] currentElection] objectId];
-    [Blockchain CreateOrGetBTCAddressForElectionID:electionID withCompletion:^(NSDictionary *address) {
-        NSLog(@" got the address.");
-    }];
+//    NSString *electionID = [[[ElectionManager Manager] currentElection] objectId];
+//    
 }
 
 - (void)didReceiveMemoryWarning {
